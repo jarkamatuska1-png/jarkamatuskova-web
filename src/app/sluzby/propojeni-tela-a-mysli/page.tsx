@@ -211,14 +211,20 @@ export default function PropojeniPage() {
             {/* Mid-page CTA */}
             <div className="border-t border-[var(--cream-dark)] pt-12">
               <p className="text-[var(--muted)] font-light mb-6">Cítíš, že tvoje tělo volá po pozornosti?</p>
-              <a
-                href={WA}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block px-10 py-4 bg-[var(--gold)] text-white text-xs tracking-[0.25em] uppercase font-medium hover:bg-[var(--gold-dark)] transition-colors duration-300"
-              >
-                Chci podporu pro tělo
-              </a>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link
+                  href="/sluzby/metoda-jih"
+                  className="inline-block px-10 py-4 bg-[var(--gold)] text-white text-xs tracking-[0.25em] uppercase font-medium hover:bg-[var(--gold-dark)] transition-colors duration-300 text-center"
+                >
+                  Metoda JIH®
+                </Link>
+                <Link
+                  href="/sluzby/plna-sily"
+                  className="inline-block px-10 py-4 border border-[var(--gold)] text-[var(--gold)] text-xs tracking-[0.25em] uppercase font-medium hover:bg-[var(--gold)] hover:text-white transition-all duration-300 text-center"
+                >
+                  Plná síly
+                </Link>
+              </div>
             </div>
           </div>
         </section>
