@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Footer() {
   return (
     <footer className="bg-[var(--foreground)] py-12">
@@ -16,15 +18,23 @@ export default function Footer() {
         </div>
         <div className="mt-8 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-white/40">
           <p>© {new Date().getFullYear()} Jarka Matušková. Všechna práva vyhrazena.</p>
-          <p>
+          <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2">
             <a href="mailto:matuskova@freli.cz" className="hover:text-[var(--gold)] transition-colors">
               matuskova@freli.cz
             </a>
-            {" · "}
+            <span>·</span>
             <a href="tel:+420774420251" className="hover:text-[var(--gold)] transition-colors">
               +420 774 420 251
             </a>
-          </p>
+            <span>·</span>
+            <Link href="/gdpr" className="hover:text-[var(--gold)] transition-colors">
+              GDPR
+            </Link>
+            <span>·</span>
+            <Link href="/obchodni-podminky" className="hover:text-[var(--gold)] transition-colors">
+              Obchodní podmínky
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
