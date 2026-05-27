@@ -4,6 +4,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 const PAGE_URL = "https://jarkamatuskova.cz/sluzby/plna-sily";
+const WA = "https://wa.me/420774420251?text=Ahoj+Jarko%2C+zaj%C3%ADmaj%C3%AD+m%C4%9B+produkty+Pln%C3%A1+s%C3%ADly.+R%C3%A1da+bych+se+dozv%C4%9Bd%C4%9Bla+v%C3%ADce.";
 
 export const metadata: Metadata = {
   title: "Plná síly | Jarka Matušková",
@@ -129,7 +130,7 @@ export default function PlnaSilyPage() {
               sama sebou.
             </p>
             <a
-              href="https://wa.me/420774420251"
+              href={WA}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block px-10 py-4 bg-[var(--gold)] text-white text-xs tracking-[0.25em] uppercase font-medium hover:bg-[var(--gold-dark)] transition-colors duration-300"
@@ -208,7 +209,7 @@ export default function PlnaSilyPage() {
                     ))}
                   </ul>
                   <a
-                    href="https://wa.me/420774420251"
+                    href={WA}
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`inline-block text-xs tracking-[0.2em] uppercase border-b pb-0.5 transition-colors duration-200 ${
@@ -262,7 +263,7 @@ export default function PlnaSilyPage() {
               ukážu ti, jak začít.
             </p>
             <a
-              href="https://wa.me/420774420251"
+              href={WA}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block px-10 py-4 border border-[var(--gold)] text-[var(--gold)] text-xs tracking-[0.25em] uppercase font-medium hover:bg-[var(--gold)] hover:text-white transition-all duration-300"

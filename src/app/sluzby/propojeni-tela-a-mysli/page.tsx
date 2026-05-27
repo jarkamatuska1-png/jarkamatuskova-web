@@ -107,7 +107,7 @@ const jsonLd = {
   ],
 };
 
-const WA = "https://wa.me/420774420251";
+const WA = "https://wa.me/420774420251?text=Ahoj+Jarko%2C+zaj%C3%ADm%C3%A1+m%C4%9B+propojen%C3%AD+t%C4%9Bla+a+mysli.+R%C3%A1da+bych+se+dozv%C4%9Bd%C4%9Bla+v%C3%ADce.";
 
 export default function PropojeniPage() {
   return (

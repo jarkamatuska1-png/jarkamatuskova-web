@@ -4,6 +4,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 const PAGE_URL = "https://jarkamatuskova.cz/sluzby/metoda-jih";
+const WA = "https://wa.me/420774420251?text=Ahoj+Jarko%2C+zaj%C3%ADm%C3%A1+m%C4%9B+metoda+JIH%C2%AE.+R%C3%A1da+bych+se+dozv%C4%9Bd%C4%9Bla+v%C3%ADce.";
 
 export const metadata: Metadata = {
   title: "Metoda JIH® | Jarka Matušková",
@@ -250,7 +251,7 @@ export default function MetodaJihPage() {
                     {o.description}
                   </p>
                   <a
-                    href="https://wa.me/420774420251"
+                    href={WA}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-xs tracking-[0.2em] uppercase text-[var(--gold)] border-b border-[var(--gold)] pb-0.5 hover:text-[var(--gold-dark)] hover:border-[var(--gold-dark)] transition-colors"
@@ -301,7 +302,7 @@ export default function MetodaJihPage() {
               Napiš mi — ráda si s tebou popovídám a odpovím na všechny otázky.
             </p>
             <a
-              href="https://wa.me/420774420251"
+              href={WA}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block px-10 py-4 border border-[var(--gold)] text-[var(--gold)] text-xs tracking-[0.25em] uppercase font-medium hover:bg-[var(--gold)] hover:text-white transition-all duration-300"
