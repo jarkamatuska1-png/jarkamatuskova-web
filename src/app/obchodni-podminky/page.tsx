@@ -5,6 +5,7 @@ import Link from "next/link";
 export const metadata = {
   title: "Obchodní podmínky | Jarka Matušková",
   description: "Obchodní podmínky pro poskytování digitálního obsahu — online kurzy, webináře, e-booky.",
+  robots: { index: false, follow: false },
 };
 
 export default function ObchodniPodminkyPage() {

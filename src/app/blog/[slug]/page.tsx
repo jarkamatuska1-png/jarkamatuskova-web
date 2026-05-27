@@ -13,9 +13,29 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const post = getPostBySlug(slug);
   if (!post) return {};
+  const url = `https://jarkamatuskova.cz/blog/${slug}`;
   return {
     title: `${post.title} | Jarka Matušková`,
     description: post.excerpt,
+    keywords: ["vědomý život", "metoda JIH", "osobní rozvoj", "Jarka Matušková", post.title],
+    alternates: { canonical: url },
+    openGraph: {
+      title: `${post.title} | Jarka Matušková`,
+      description: post.excerpt,
+      url,
+      siteName: "Jarka Matušková",
+      locale: "cs_CZ",
+      type: "article",
+      publishedTime: post.date,
+      authors: ["Jarka Matušková"],
+      images: [{ url: "/opengraph-image.png", width: 1200, height: 630, alt: post.title }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${post.title} | Jarka Matušková`,
+      description: post.excerpt,
+      images: ["/opengraph-image.png"],
+    },
   };
 }
 
@@ -23,6 +43,36 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const post = getPostBySlug(slug);
   if (!post) notFound();
+
+  const postUrl = `https://jarkamatuskova.cz/blog/${slug}`;
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.excerpt,
+    url: postUrl,
+    datePublished: post.date,
+    inLanguage: "cs",
+    author: {
+      "@type": "Person",
+      name: "Jarka Matušková",
+      url: "https://jarkamatuskova.cz",
+    },
+    publisher: {
+      "@type": "Person",
+      name: "Jarka Matušková",
+      url: "https://jarkamatuskova.cz",
+    },
+    mainEntityOfPage: { "@type": "WebPage", "@id": postUrl },
+    breadcrumb: {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Domů", item: "https://jarkamatuskova.cz" },
+        { "@type": "ListItem", position: 2, name: "Blog", item: "https://jarkamatuskova.cz/blog" },
+        { "@type": "ListItem", position: 3, name: post.title, item: postUrl },
+      ],
+    },
+  };
 
   const allPosts = getAllPosts();
   const relatedPosts = allPosts
@@ -37,6 +87,10 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Nav />
       <main className="pt-32 pb-28 min-h-screen bg-white">
         <div className="max-w-3xl mx-auto px-6">

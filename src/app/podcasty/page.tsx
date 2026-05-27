@@ -5,6 +5,23 @@ import Link from "next/link";
 export const metadata = {
   title: "Podcasty | Jarka Matušková",
   description: "Poslouchej podcasty Jarky Matuškové o vědomém životě, metodě JIH® a osobním rozvoji. Dostupné na Spotify a Apple Podcasts.",
+  keywords: ["podcast", "Jarka Matušková", "vědomý život", "metoda JIH", "osobní rozvoj", "Spotify", "inspirace"],
+  alternates: { canonical: "https://jarkamatuskova.cz/podcasty" },
+  openGraph: {
+    title: "Podcasty | Jarka Matušková",
+    description: "Inspirace do uší — o vědomém životě, metodě JIH® a osobním rozvoji.",
+    url: "https://jarkamatuskova.cz/podcasty",
+    siteName: "Jarka Matušková",
+    locale: "cs_CZ",
+    type: "website",
+    images: [{ url: "/opengraph-image.png", width: 1200, height: 630, alt: "Podcasty | Jarka Matušková" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Podcasty | Jarka Matušková",
+    description: "Inspirace do uší — vědomý život, metoda JIH® a osobní rozvoj.",
+    images: ["/opengraph-image.png"],
+  },
 };
 
 export default function PodcastyPage() {

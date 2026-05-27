@@ -5,6 +5,7 @@ import Link from "next/link";
 export const metadata = {
   title: "Zásady ochrany osobních údajů | Jarka Matušková",
   description: "Informace o zpracování osobních údajů dle GDPR — freli s.r.o., Jimlín 230, 440 01 Jimlín.",
+  robots: { index: false, follow: false },
 };
 
 export default function GdprPage() {

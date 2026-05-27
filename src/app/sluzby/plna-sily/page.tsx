@@ -1,11 +1,54 @@
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Link from "next/link";
+import type { Metadata } from "next";
 
-export const metadata = {
+const PAGE_URL = "https://jarkamatuskova.cz/sluzby/plna-sily";
+
+export const metadata: Metadata = {
   title: "Plná síly | Jarka Matušková",
-  description:
-    "Ranní rituál pro energii a večerní pro regeneraci. Dva jednoduché kroky, které ti dají sílu být sama sebou každý den.",
+  description: "Ranní rituál pro energii a večerní pro regeneraci. Dva jednoduché kroky, které ti dají sílu být sama sebou každý den.",
+  keywords: ["plná síly", "vitamínový drink", "ranní rituál", "energie", "regenerace", "fyzická pohoda", "Jarka Matušková", "zdraví"],
+  alternates: { canonical: PAGE_URL },
+  openGraph: {
+    title: "Plná síly | Jarka Matušková",
+    description: "Ranní rituál pro energii a večerní pro regeneraci. Fyzická podpora pro každý den.",
+    url: PAGE_URL,
+    siteName: "Jarka Matušková",
+    locale: "cs_CZ",
+    type: "website",
+    images: [{ url: "/opengraph-image.png", width: 1200, height: 630, alt: "Plná síly | Jarka Matušková" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Plná síly | Jarka Matušková",
+    description: "Ranní rituál pro energii a večerní pro regeneraci.",
+    images: ["/opengraph-image.png"],
+  },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": PAGE_URL,
+      url: PAGE_URL,
+      name: "Plná síly | Jarka Matušková",
+      description: "Fyzická podpora pro každý den — ranní vitamínový drink a večerní minerální drink pro regeneraci.",
+      inLanguage: "cs",
+      breadcrumb: { "@id": `${PAGE_URL}#breadcrumb` },
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${PAGE_URL}#breadcrumb`,
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Domů", item: "https://jarkamatuskova.cz" },
+        { "@type": "ListItem", position: 2, name: "Produkty", item: "https://jarkamatuskova.cz/#palna-sily" },
+        { "@type": "ListItem", position: 3, name: "Plná síly", item: PAGE_URL },
+      ],
+    },
+  ],
 };
 
 const benefits = [
@@ -63,6 +106,10 @@ const faq = [
 export default function PlnaSilyPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Nav />
       <main className="bg-white">
 

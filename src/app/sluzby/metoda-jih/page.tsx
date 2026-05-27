@@ -1,11 +1,69 @@
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Link from "next/link";
+import type { Metadata } from "next";
 
-export const metadata = {
+const PAGE_URL = "https://jarkamatuskova.cz/sluzby/metoda-jih";
+
+export const metadata: Metadata = {
   title: "Metoda JIH® | Jarka Matušková",
-  description:
-    "JIH® — Jasné Informace Hned vnímáním emocí. Unikátní metoda, která od roku 2015 pomáhá stovkám lidí napřímit všechny oblasti jejich života.",
+  description: "JIH® — Jasné Informace Hned vnímáním emocí. Unikátní metoda, která od roku 2015 pomáhá stovkám lidí napřímit všechny oblasti jejich života.",
+  keywords: ["metoda JIH", "JIH koučink", "Jarka Matušková", "vědomý život", "osobní rozvoj", "práce s emocemi", "koučink", "životní styl"],
+  alternates: { canonical: PAGE_URL },
+  openGraph: {
+    title: "Metoda JIH® | Jarka Matušková",
+    description: "JIH® — Jasné Informace Hned vnímáním emocí. Unikátní metoda pro vědomý život, zdraví a hojnost.",
+    url: PAGE_URL,
+    siteName: "Jarka Matušková",
+    locale: "cs_CZ",
+    type: "website",
+    images: [{ url: "/opengraph-image.png", width: 1200, height: 630, alt: "Metoda JIH® | Jarka Matušková" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Metoda JIH® | Jarka Matušková",
+    description: "Unikátní metoda pro vědomý život od roku 2015.",
+    images: ["/opengraph-image.png"],
+  },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": PAGE_URL,
+      url: PAGE_URL,
+      name: "Metoda JIH® | Jarka Matušková",
+      description: "JIH® — Jasné Informace Hned vnímáním emocí. Unikátní metoda pro vědomý životní styl.",
+      inLanguage: "cs",
+      breadcrumb: { "@id": `${PAGE_URL}#breadcrumb` },
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${PAGE_URL}#breadcrumb`,
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Domů", item: "https://jarkamatuskova.cz" },
+        { "@type": "ListItem", position: 2, name: "Služby", item: "https://jarkamatuskova.cz/#sluzby" },
+        { "@type": "ListItem", position: 3, name: "Metoda JIH®", item: PAGE_URL },
+      ],
+    },
+    {
+      "@type": "Service",
+      name: "Metoda JIH® — koučink a osobní rozvoj",
+      description: "Unikátní metoda vědomé práce s emocemi, energií a životním stylem. Pomáhám lidem napřímit vztahy, zdraví, finance a pocit vlastní hodnoty.",
+      provider: {
+        "@type": "Person",
+        name: "Jarka Matušková",
+        url: "https://jarkamatuskova.cz",
+        telephone: "+420774420251",
+        email: "matuskova@freli.cz",
+      },
+      serviceType: "Koučink a osobní rozvoj",
+      areaServed: "CZ",
+      url: PAGE_URL,
+    },
+  ],
 };
 
 const pillars = [
@@ -85,6 +143,10 @@ const testimonials = [
 export default function MetodaJihPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Nav />
       <main className="bg-white">
 

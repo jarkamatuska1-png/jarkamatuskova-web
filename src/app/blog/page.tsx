@@ -2,10 +2,28 @@ import { getAllPosts, formatDate } from "@/lib/blog";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Link from "next/link";
+import type { Metadata } from "next";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Blog | Jarka Matušková",
-  description: "Inspirace, články a myšlenky o vědomém životě, metodě JIH® a osobním rozvoji.",
+  description: "Inspirace, články a myšlenky o vědomém životě, metodě JIH® a osobním rozvoji. Čti pravidelně — pro energii, klid a návrat k sobě.",
+  keywords: ["blog", "vědomý život", "metoda JIH", "osobní rozvoj", "Jarka Matušková", "inspirace", "emoce", "energie"],
+  alternates: { canonical: "https://jarkamatuskova.cz/blog" },
+  openGraph: {
+    title: "Blog | Jarka Matušková",
+    description: "Inspirace, články a myšlenky o vědomém životě, metodě JIH® a osobním rozvoji.",
+    url: "https://jarkamatuskova.cz/blog",
+    siteName: "Jarka Matušková",
+    locale: "cs_CZ",
+    type: "website",
+    images: [{ url: "/opengraph-image.png", width: 1200, height: 630, alt: "Blog | Jarka Matušková" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Blog | Jarka Matušková",
+    description: "Inspirace, články a myšlenky o vědomém životě a metodě JIH®.",
+    images: ["/opengraph-image.png"],
+  },
 };
 
 export default function BlogPage() {
