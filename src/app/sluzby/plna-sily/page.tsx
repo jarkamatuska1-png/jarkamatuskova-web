@@ -158,8 +158,10 @@ export default function PlnaSilyPage() {
                       </li>
                     ))}
                   </ul>
-                  <Link
-                    href="/#kontakt"
+                  <a
+                    href="https://wa.me/420774420251"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className={`inline-block text-xs tracking-[0.2em] uppercase border-b pb-0.5 transition-colors duration-200 ${
                       b.dark
                         ? "text-[var(--gold-light)] border-[var(--gold-light)] hover:text-white hover:border-white"
@@ -167,7 +169,7 @@ export default function PlnaSilyPage() {
                     }`}
                   >
                     Mám zájem →
-                  </Link>
+                  </a>
                 </div>
               ))}
             </div>
@@ -210,12 +212,14 @@ export default function PlnaSilyPage() {
               Napiš mi — ráda si s tebou popovídám, odpovím na všechny otázky a
               ukážu ti, jak začít.
             </p>
-            <Link
-              href="/#kontakt"
+            <a
+              href="https://wa.me/420774420251"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-block px-10 py-4 border border-[var(--gold)] text-[var(--gold)] text-xs tracking-[0.25em] uppercase font-medium hover:bg-[var(--gold)] hover:text-white transition-all duration-300"
             >
-              Napsat Jarce
-            </Link>
+              Napsat přes WhatsApp
+            </a>
           </div>
         </section>
 
