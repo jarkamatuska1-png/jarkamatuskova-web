@@ -1,10 +1,110 @@
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Link from "next/link";
+import type { Metadata } from "next";
 
-export const metadata = {
-  title: "Propojení těla a mysli | Metoda JIH®",
-  description: "Tělo není tvůj nepřítel. Je to místo, kde pravda přestává mlčet. Objev jemné propojení těla, emocí a vnitřního vnímání skrze metodu JIH®.",
+const PAGE_URL = "https://jarkamatuskova.cz/sluzby/propojeni-tela-a-mysli";
+
+export const metadata: Metadata = {
+  title: "Propojení těla a mysli | Metoda JIH® | Jarka Matušková",
+  description: "Tělo není tvůj nepřítel. Je to místo, kde pravda přestává mlčet. Objev jemné propojení těla, emocí a vnitřního vnímání skrze metodu JIH® s Jarkou Matuškovou.",
+  keywords: [
+    "propojení těla a mysli",
+    "metoda JIH",
+    "Jarka Matušková",
+    "vědomý život",
+    "práce s tělem",
+    "emoce a tělo",
+    "koučink",
+    "osobní rozvoj",
+    "somatická práce",
+    "vnitřní vnímání",
+  ],
+  alternates: {
+    canonical: PAGE_URL,
+  },
+  openGraph: {
+    title: "Propojení těla a mysli | Metoda JIH® | Jarka Matušková",
+    description: "Tělo není tvůj nepřítel. Je to místo, kde pravda přestává mlčet. Objev jemné propojení těla, emocí a vnitřního vnímání skrze metodu JIH®.",
+    url: PAGE_URL,
+    siteName: "Jarka Matušková",
+    locale: "cs_CZ",
+    type: "website",
+    images: [
+      {
+        url: "/opengraph-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Propojení těla a mysli | Jarka Matušková",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Propojení těla a mysli | Metoda JIH®",
+    description: "Tělo není tvůj nepřítel. Je to místo, kde pravda přestává mlčet.",
+    images: ["/opengraph-image.png"],
+  },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": PAGE_URL,
+      url: PAGE_URL,
+      name: "Propojení těla a mysli | Metoda JIH® | Jarka Matušková",
+      description: "Tělo není tvůj nepřítel. Objev jemné propojení těla, emocí a vnitřního vnímání skrze metodu JIH® s Jarkou Matuškovou.",
+      inLanguage: "cs",
+      isPartOf: { "@id": "https://jarkamatuskova.cz" },
+      breadcrumb: { "@id": `${PAGE_URL}#breadcrumb` },
+      author: {
+        "@type": "Person",
+        name: "Jarka Matušková",
+        url: "https://jarkamatuskova.cz",
+      },
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${PAGE_URL}#breadcrumb`,
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Domů",
+          item: "https://jarkamatuskova.cz",
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Služby",
+          item: "https://jarkamatuskova.cz/#sluzby",
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: "Propojení těla a mysli",
+          item: PAGE_URL,
+        },
+      ],
+    },
+    {
+      "@type": "Service",
+      name: "Propojení těla a mysli",
+      description: "Vědomá práce s tělem, emocemi a vnitřním vnímáním skrze metodu JIH®. Pomáhám ženám porozumět signálům svého těla a najít cestu zpátky k sobě.",
+      provider: {
+        "@type": "Person",
+        name: "Jarka Matušková",
+        url: "https://jarkamatuskova.cz",
+        telephone: "+420774420251",
+        email: "matuskova@freli.cz",
+      },
+      serviceType: "Koučink a osobní rozvoj",
+      areaServed: "CZ",
+      url: PAGE_URL,
+    },
+  ],
 };
 
 const WA = "https://wa.me/420774420251";
@@ -12,6 +112,10 @@ const WA = "https://wa.me/420774420251";
 export default function PropojeniPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Nav />
       <main className="bg-white">
 
