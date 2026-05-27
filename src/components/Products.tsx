@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const products = [
   {
     time: "Ráno",
@@ -67,10 +69,8 @@ export default function Products() {
               }`}>
                 {product.description}
               </p>
-              <a
-                href="https://wa.me/420774420251"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href="/sluzby/plna-sily"
                 className={`inline-block text-xs tracking-[0.2em] uppercase border-b pb-0.5 transition-colors duration-200 ${
                   product.dark
                     ? "text-[var(--gold-light)] border-[var(--gold-light)] hover:text-white hover:border-white"
@@ -78,7 +78,7 @@ export default function Products() {
                 }`}
               >
                 Mám zájem →
-              </a>
+              </Link>
             </div>
           ))}
         </div>

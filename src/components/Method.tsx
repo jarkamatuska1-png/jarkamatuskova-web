@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const pillars = [
   {
@@ -72,12 +73,12 @@ export default function Method() {
         </div>
 
         <div className="text-center">
-          <a
-            href="#kontakt"
+          <Link
+            href="/sluzby/metoda-jih"
             className="inline-block px-10 py-4 border border-[var(--gold)] text-[var(--gold)] text-xs tracking-[0.25em] uppercase font-medium hover:bg-[var(--gold)] hover:text-white transition-all duration-300"
           >
             Začít s metodou JIH®
-          </a>
+          </Link>
         </div>
       </div>
     </section>
