@@ -9,8 +9,18 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("sending");
-    await new Promise((r) => setTimeout(r, 1000));
-    setStatus("sent");
+
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(form),
+    });
+
+    if (res.ok) {
+      setStatus("sent");
+    } else {
+      setStatus("error");
+    }
   };
 
   return (
@@ -112,6 +122,9 @@ export default function Contact() {
                   placeholder="O čem chcete mluvit?"
                 />
               </div>
+              {status === "error" && (
+                <p className="text-sm text-red-500">Něco se pokazilo. Zkus to prosím znovu.</p>
+              )}
               <button
                 type="submit"
                 disabled={status === "sending"}
