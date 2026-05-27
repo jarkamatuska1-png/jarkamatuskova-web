@@ -1,33 +1,33 @@
 const testimonials = [
   {
-    text: "Metoda JIH® mi dala nástroje, které používám každý den. Změnilo se nejenom to, jak se cítím, ale i jak přistupuji k práci a vztahům.",
-    name: "Petra K.",
-    role: "fyzioterapeutka",
-  },
-  {
-    text: "Byla jsem skeptická, ale výsledky mě překvapily. Jarka má úžasný dar provést tě přesně tam, kde to potřebuješ.",
-    name: "Martina H.",
-    role: "podnikatelka",
-  },
-  {
-    text: "Konečně jsem pochopila, proč se věci v mém životě opakují. A jak to změnit. Díky moc, Jarko.",
-    name: "Lenka V.",
-    role: "učitelka",
-  },
-  {
-    text: "Po třech měsících práce s Jarkou se cítím jako jiný člověk. Mám energii, jasno v hlavě a vím, co chci.",
-    name: "Michaela R.",
+    text: "Velké díky Jarce za správné nasměrování, za úlevu ve všech oblastech mého života, za úžasnou metodu JIH. Během pár minut vyřeší vaše problémy, v energiích uvolní, co je bržděno a blokováno. Velmi doporučuji všem, kdo chce svůj život obohatit o hojnost ve všech oblastech.",
+    name: "Petra",
     role: "kosmetička",
   },
   {
-    text: "JIH® není jen metoda — je to způsob života. Doporučuji každému, kdo hledá skutečnou a trvalou změnu.",
-    name: "Jana S.",
-    role: "výtvarnice",
+    text: "Bezprostredným, ľahkým a uvoľneným spôsobom ma Jarka voviedla do úžasnej cesty — cesty spoznávania Božstva v inom rozmere. Jej pôsobenie má dosah hneď, jej prepojenie s Bohom je citeľné. Trúfam si povedať, že Jaruška dokáže zázraky.",
+    name: "Katka",
+    role: "podnikatelka",
   },
   {
-    text: "Propojení fyzického zdraví a osobního rozvoje — to mi v jiných přístupech vždy chybělo. Tady to funguje.",
-    name: "Eva B.",
-    role: "manažerka",
+    text: "Jaruška je pro mě naprosto výjimečný člověk. Mě jeho myšlenky a učení vždy, za každých byť sebetěžších okolností, uvedly zpátky do klidu, k sobě. Neskutečně si Jarušky vážím a jsem moc vděčná, že ji mám v životě.",
+    name: "Jana",
+    role: "podnikatelka",
+  },
+  {
+    text: "Jaruška má obrovský dar pomáhat lidem krásným, jemným a láskyplným způsobem. Její metoda JIH je jemnost sama. Neumím spočítat kolikrát mě a celé mé rodině pomohla, ukázala cestu a přivedla nás tam, kde nám je lépe — do lásky a pravdy.",
+    name: "Lenka",
+    role: "majitelka firmy",
+  },
+  {
+    text: "Jaruška Matušková a metoda JIH mě doslova učarovala. Seberozvoji se věnuji už několik let, ale teprve v podání Jarušky se v tom cítím konečně dobře, přirozeně a svobodně. Miluju Jarušku pro její přímost a jasnost předávaných informací.",
+    name: "Hanka",
+    role: "podnikatelka",
+  },
+  {
+    text: "Jarka mě naučila, jak věřit sama sobě. Díky ní jsem zjistila, že je v pořádku být citlivá a vnímavá k sobě i k druhým. Studium terapeuta JIHu mi ukázalo novou cestu životem — cestu hojnosti, lásky a sebeúcty.",
+    name: "Alena",
+    role: "kadeřnice",
   },
 ];
 
