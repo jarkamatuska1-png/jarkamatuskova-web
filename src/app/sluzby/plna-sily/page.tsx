@@ -82,10 +82,12 @@ export default function PlnaSilyPage() {
               sama sebou.
             </p>
             <a
-              href="#produkty"
+              href="https://wa.me/420774420251"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-block px-10 py-4 bg-[var(--gold)] text-white text-xs tracking-[0.25em] uppercase font-medium hover:bg-[var(--gold-dark)] transition-colors duration-300"
             >
-              Zjistit více
+              Mám zájem
             </a>
           </div>
         </section>
