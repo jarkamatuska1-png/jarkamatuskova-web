@@ -1,18 +1,18 @@
 const products = [
   {
     time: "Ráno",
-    name: "PowerCocktail",
+    name: "Ranní vitamínový drink",
     tagline: "Nastartuj svůj den",
     description:
-      "Ranní rituál pro energii, vitalitu a jasnou mysl. PowerCocktail ti dá vše, co tvé tělo potřebuje pro skvělý start dne.",
+      "Ranní rituál pro energii, vitalitu a jasnou mysl. Dá ti vše, co tvé tělo potřebuje pro skvělý start dne.",
     dark: false,
   },
   {
     time: "Večer",
-    name: "Restorate",
+    name: "Večerní drink plný minerálů",
     tagline: "Regeneruj přes noc",
     description:
-      "Večerní podpora pro hluboký spánek a regeneraci. Restorate pomáhá tělu zotavit se a připravit na nový den.",
+      "Večerní podpora pro hluboký spánek a regeneraci. Pomáhá tělu zotavit se a připravit na nový den.",
     dark: true,
   },
 ];
