@@ -234,26 +234,40 @@ export default function PropojeniPage() {
 
         {/* Sekce 3: Nejsi rozbitá */}
         <section className="py-32 bg-white">
-          <div className="max-w-2xl mx-auto px-6">
-            <h2 className="font-heading text-4xl md:text-5xl font-bold text-[var(--foreground)] mb-10">
-              Nejsi <span className="text-[var(--gold)]">rozbitá.</span>
-            </h2>
-            <div className="space-y-5 text-[var(--muted)] font-light leading-loose text-lg">
-              <p>Jen jsi možná příliš dlouho žila odpojená od sebe.</p>
-              <p>
-                Tvoje únava nemusí být lenost.<br />
-                Tvoje citlivost nemusí být slabost.<br />
-                Tvoje napětí nemusí být problém, který máš umlčet.
-              </p>
-              <p>Možná je to zpráva.</p>
-              <p>
-                Možná tě tvoje tělo nebrzdí.<br />
-                Možná tě chrání před tím, abys znovu šla přes sebe.
-              </p>
-              <p>
-                A možná nepotřebuješ víc tlačit.<br />
-                Možná potřebuješ začít vnímat.
-              </p>
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="grid md:grid-cols-2 gap-16 items-center">
+              <div>
+                <h2 className="font-heading text-4xl md:text-5xl font-bold text-[var(--foreground)] mb-10">
+                  Nejsi <span className="text-[var(--gold)]">rozbitá.</span>
+                </h2>
+                <div className="space-y-5 text-[var(--muted)] font-light leading-loose text-lg">
+                  <p>Jen jsi možná příliš dlouho žila odpojená od sebe.</p>
+                  <p>
+                    Tvoje únava nemusí být lenost.<br />
+                    Tvoje citlivost nemusí být slabost.<br />
+                    Tvoje napětí nemusí být problém, který máš umlčet.
+                  </p>
+                  <p>Možná je to zpráva.</p>
+                  <p>
+                    Možná tě tvoje tělo nebrzdí.<br />
+                    Možná tě chrání před tím, abys znovu šla přes sebe.
+                  </p>
+                  <p>
+                    A možná nepotřebuješ víc tlačit.<br />
+                    Možná potřebuješ začít vnímat.
+                  </p>
+                </div>
+              </div>
+              <div className="relative">
+                <Image
+                  src="/images/jarka-klid.png"
+                  alt="Jarka Matušková — klid a návrat k sobě"
+                  width={580}
+                  height={650}
+                  className="object-cover w-full"
+                />
+                <div className="absolute -bottom-4 -right-4 w-20 h-20 border border-[var(--gold)] opacity-25 pointer-events-none" />
+              </div>
             </div>
           </div>
         </section>
