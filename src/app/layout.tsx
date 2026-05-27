@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { DM_Sans, Syne } from "next/font/google";
+import { DM_Sans, Outfit } from "next/font/google";
 import "./globals.css";
 import CookieConsent from "@/components/CookieConsent";
 import Analytics from "@/components/Analytics";
@@ -11,10 +11,10 @@ const dmSans = DM_Sans({
   weight: ["300", "400", "500"],
 });
 
-const syne = Syne({
+const outfit = Outfit({
   variable: "--font-syne",
-  subsets: ["latin", "latin-ext"],
-  weight: ["400", "500", "600", "700", "800"],
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800"],
 });
 
 export const metadata: Metadata = {
@@ -58,7 +58,7 @@ export default function RootLayout({
   return (
     <html
       lang="cs"
-      className={`${dmSans.variable} ${syne.variable} h-full antialiased`}
+      className={`${dmSans.variable} ${outfit.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col font-sans">
         {children}
