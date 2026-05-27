@@ -3,6 +3,7 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import ShareButtons from "@/components/ShareButtons";
 
 export async function generateStaticParams() {
   return getAllPosts().map((post) => ({ slug: post.slug }));
@@ -22,6 +23,12 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const post = getPostBySlug(slug);
   if (!post) notFound();
+
+  const allPosts = getAllPosts();
+  const relatedPosts = allPosts
+    .filter((p) => p.slug !== slug)
+    .sort(() => Math.random() - 0.5)
+    .slice(0, 3);
 
   const paragraphs = post.content
     .split(/\n{2,}/)
@@ -77,8 +84,36 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
             })}
           </article>
 
-          {/* Back link */}
+          {/* Share */}
           <div className="mt-16 pt-10 border-t border-[var(--cream-dark)]">
+            <ShareButtons slug={slug} title={post.title} />
+          </div>
+
+          {/* Related posts */}
+          {relatedPosts.length > 0 && (
+            <div className="mt-16">
+              <p className="text-xs tracking-[0.3em] uppercase text-[var(--gold)] mb-8">Další články</p>
+              <div className="grid md:grid-cols-3 gap-6">
+                {relatedPosts.map((related) => (
+                  <Link
+                    key={related.slug}
+                    href={`/blog/${related.slug}`}
+                    className="group block border border-[var(--cream-dark)] p-5 hover:border-[var(--gold)] transition-colors duration-300"
+                  >
+                    <p className="text-xs tracking-[0.2em] uppercase text-[var(--gold)] mb-3">
+                      {formatDate(related.date)}
+                    </p>
+                    <h3 className="font-heading text-base font-semibold text-[var(--foreground)] leading-snug group-hover:text-[var(--gold)] transition-colors line-clamp-3">
+                      {related.title}
+                    </h3>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Back link */}
+          <div className="mt-12 pt-8 border-t border-[var(--cream-dark)]">
             <Link
               href="/blog"
               className="inline-block text-xs tracking-[0.2em] uppercase text-[var(--gold)] border-b border-[var(--gold)] pb-0.5 hover:text-[var(--gold-dark)] hover:border-[var(--gold-dark)] transition-colors"

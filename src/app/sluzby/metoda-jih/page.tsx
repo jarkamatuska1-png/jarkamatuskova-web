@@ -187,12 +187,14 @@ export default function MetodaJihPage() {
                   <p className="text-[var(--muted)] leading-relaxed font-light mb-8">
                     {o.description}
                   </p>
-                  <Link
-                    href="/#kontakt"
+                  <a
+                    href="https://wa.me/420774420251"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-xs tracking-[0.2em] uppercase text-[var(--gold)] border-b border-[var(--gold)] pb-0.5 hover:text-[var(--gold-dark)] hover:border-[var(--gold-dark)] transition-colors"
                   >
                     Mám zájem →
-                  </Link>
+                  </a>
                 </div>
               ))}
             </div>
@@ -236,12 +238,14 @@ export default function MetodaJihPage() {
             <p className="text-white/60 font-light leading-relaxed mb-12 max-w-xl mx-auto">
               Napiš mi — ráda si s tebou popovídám a odpovím na všechny otázky.
             </p>
-            <Link
-              href="/#kontakt"
+            <a
+              href="https://wa.me/420774420251"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-block px-10 py-4 border border-[var(--gold)] text-[var(--gold)] text-xs tracking-[0.25em] uppercase font-medium hover:bg-[var(--gold)] hover:text-white transition-all duration-300"
             >
-              Napsat Jarce
-            </Link>
+              Napsat Jarce →
+            </a>
           </div>
         </section>
 

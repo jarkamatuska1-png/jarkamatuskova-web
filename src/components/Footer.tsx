@@ -39,6 +39,10 @@ export default function Footer() {
             <Link href="/obchodni-podminky" className="hover:text-[var(--gold)] transition-colors">
               Obchodní podmínky
             </Link>
+            <span>·</span>
+            <Link href="/podcasty" className="hover:text-[var(--gold)] transition-colors">
+              Podcasty
+            </Link>
           </div>
         </div>
       </div>

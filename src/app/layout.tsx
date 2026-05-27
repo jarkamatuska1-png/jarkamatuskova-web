@@ -3,6 +3,7 @@ import { DM_Sans, Syne } from "next/font/google";
 import "./globals.css";
 import CookieConsent from "@/components/CookieConsent";
 import Analytics from "@/components/Analytics";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 const dmSans = DM_Sans({
   variable: "--font-dm-sans",
@@ -61,6 +62,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col font-sans">
         {children}
+        <WhatsAppButton />
         <CookieConsent />
         <Analytics />
       </body>
