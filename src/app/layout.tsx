@@ -22,6 +22,9 @@ export const metadata: Metadata = {
     "Vědomá práce na sobě a fyzická pohoda. Propojím tě s metodou JIH® a ukážu ti, jak mít energii v těle a klid v mysli — každý den.",
   keywords: ["metoda JIH", "osobní rozvoj", "vědomý život", "koučování", "Jarka Matušková"],
   metadataBase: new URL("https://jarkamatuskova.cz"),
+  other: {
+    "facebook-domain-verification": "lh02ci5zn1uqauv45qzkv01jfhurhs",
+  },
   openGraph: {
     title: "Jarka Matušková | Průvodkyně vědomým životem",
     description: "Tvůj život. Naplno. Teď.",
