@@ -46,8 +46,9 @@ export default function Services() {
 
         <div>
           {services.map((service, i) => (
-            <div
+            <Link
               key={service.number}
+              href={service.href}
               className={`grid md:grid-cols-[80px_1fr_auto] gap-8 items-center py-12 ${
                 i < services.length - 1 ? "border-b border-[var(--cream-dark)]" : ""
               } group`}
@@ -59,20 +60,17 @@ export default function Services() {
                 <p className="text-xs tracking-[0.3em] uppercase text-[var(--gold)] mb-2">
                   {service.category}
                 </p>
-                <h3 className="font-heading text-2xl font-semibold text-[var(--foreground)] mb-3">
+                <h3 className="font-heading text-2xl font-semibold text-[var(--foreground)] mb-3 group-hover:text-[var(--gold)] transition-colors duration-200">
                   {service.title}
                 </h3>
                 <p className="text-[var(--muted)] leading-relaxed max-w-xl font-light">
                   {service.description}
                 </p>
               </div>
-              <Link
-                href={service.href}
-                className="hidden md:inline-block whitespace-nowrap text-xs tracking-[0.2em] uppercase text-[var(--gold)] border-b border-[var(--gold)] pb-0.5 hover:border-[var(--gold-dark)] hover:text-[var(--gold-dark)] transition-colors duration-200"
-              >
+              <span className="hidden md:inline-block whitespace-nowrap text-xs tracking-[0.2em] uppercase text-[var(--gold)] border-b border-[var(--gold)] pb-0.5 group-hover:border-[var(--gold-dark)] group-hover:text-[var(--gold-dark)] transition-colors duration-200">
                 {service.cta} →
-              </Link>
-            </div>
+              </span>
+            </Link>
           ))}
         </div>
       </div>
