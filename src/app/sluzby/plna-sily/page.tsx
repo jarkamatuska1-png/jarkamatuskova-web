@@ -1,6 +1,7 @@
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Link from "next/link";
+import CalendlyEmbed from "@/components/CalendlyEmbed";
 import type { Metadata } from "next";
 
 const PAGE_URL = "https://jarkamatuskova.cz/sluzby/plna-sily";
@@ -323,6 +324,22 @@ export default function PlnaSilyPage() {
                 </div>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* Calendly */}
+        <section className="py-28 bg-[var(--cream)]">
+          <div className="max-w-4xl mx-auto px-6">
+            <div className="text-center mb-12">
+              <p className="text-xs tracking-[0.4em] uppercase text-[var(--gold)] mb-5">Zdarma</p>
+              <h2 className="font-heading text-4xl md:text-5xl font-bold text-[var(--foreground)] mb-6">
+                Rezervuj si <span className="text-[var(--gold)]">bezplatný hovor</span>
+              </h2>
+              <p className="text-[var(--muted)] font-light leading-relaxed max-w-xl mx-auto">
+                15 minut, žádný závazek. Povíme si, co tě trápí, a zjistíme, jestli ti mohu pomoci.
+              </p>
+            </div>
+            <CalendlyEmbed url="https://calendly.com/jarkamatuska1" />
           </div>
         </section>
 
