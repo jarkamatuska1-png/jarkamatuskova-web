@@ -61,12 +61,12 @@ export default function Contact() {
 
           <div className="mt-12 flex gap-6">
             {[
-              { label: "Facebook", href: "#" },
-              { label: "Instagram", href: "#" },
-              { label: "YouTube", href: "#" },
-              { label: "LinkedIn", href: "#" },
+              { label: "Facebook", href: "https://www.facebook.com/jarka.matuskova" },
+              { label: "Instagram", href: "https://www.instagram.com/j_matuskova/" },
+              { label: "YouTube", href: "https://www.youtube.com/channel/UCMi-vMNkT_TkU1LBcmLRqzw?view_as=subscriber" },
+              { label: "LinkedIn", href: "https://www.linkedin.com/in/jarka-matuskova/" },
             ].map((s) => (
-              <a key={s.label} href={s.href} className="text-xs tracking-[0.15em] uppercase text-[var(--muted)] hover:text-[var(--gold)] transition-colors">
+              <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" className="text-xs tracking-[0.15em] uppercase text-[var(--muted)] hover:text-[var(--gold)] transition-colors">
                 {s.label}
               </a>
             ))}

@@ -9,9 +9,14 @@ export default function Footer() {
             Jarka Matušková
           </p>
           <div className="flex gap-8 text-xs tracking-[0.2em] uppercase">
-            {["Facebook", "Instagram", "YouTube", "LinkedIn"].map((s) => (
-              <a key={s} href="#" className="text-white/50 hover:text-[var(--gold)] transition-colors">
-                {s}
+            {[
+              { label: "Facebook", href: "https://www.facebook.com/jarka.matuskova" },
+              { label: "Instagram", href: "https://www.instagram.com/j_matuskova/" },
+              { label: "YouTube", href: "https://www.youtube.com/channel/UCMi-vMNkT_TkU1LBcmLRqzw?view_as=subscriber" },
+              { label: "LinkedIn", href: "https://www.linkedin.com/in/jarka-matuskova/" },
+            ].map((s) => (
+              <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" className="text-white/50 hover:text-[var(--gold)] transition-colors">
+                {s.label}
               </a>
             ))}
           </div>
