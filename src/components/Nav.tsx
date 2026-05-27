@@ -3,12 +3,12 @@
 import { useState, useEffect } from "react";
 
 const links = [
-  { href: "#o-mne", label: "O mně" },
-  { href: "#metoda-jih", label: "Metoda JIH®" },
-  { href: "#sluzby", label: "Služby" },
-  { href: "#reference", label: "Reference" },
-  { href: "#blog", label: "Blog" },
-  { href: "#kontakt", label: "Kontakt" },
+  { href: "/#o-mne", label: "O mně" },
+  { href: "/#metoda-jih", label: "Metoda JIH®" },
+  { href: "/#sluzby", label: "Služby" },
+  { href: "/#reference", label: "Reference" },
+  { href: "/blog", label: "Blog" },
+  { href: "/#kontakt", label: "Kontakt" },
 ];
 
 export default function Nav() {
@@ -28,7 +28,7 @@ export default function Nav() {
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
-        <a href="#" className="font-heading text-base font-bold tracking-[0.15em] uppercase text-[var(--foreground)]">
+        <a href="/" className="font-heading text-base font-bold tracking-[0.15em] uppercase text-[var(--foreground)]">
           Jarka Matušková
         </a>
 
