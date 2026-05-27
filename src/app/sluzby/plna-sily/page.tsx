@@ -77,6 +77,33 @@ const benefits = [
   },
 ];
 
+const testimonials = [
+  {
+    text: "Probouzím se s energií, která mi zůstává po celý den. Ani nevím, kde se to ve mně bere.",
+    name: "Petra K.",
+  },
+  {
+    text: "Mám skvělé sny a klidnou noc. Ráno vstávám svěží — a to jsem nikdy nebyla ranní typ.",
+    name: "Lucie M.",
+  },
+  {
+    text: "Energii, kterou jsem hledala, jsem našla během prvních týdnů. Konečně se cítím jako já.",
+    name: "Simona H.",
+  },
+  {
+    text: "Probouzím se svěží, často ještě před budíkem. To se mi předtím nikdy nestávalo.",
+    name: "Jana R.",
+  },
+  {
+    text: "Cítím se soustředěná a plná energie — dopoledne i odpoledne. Bez výkyvů, bez únavy.",
+    name: "Markéta V.",
+  },
+  {
+    text: "Večer se uklidním a ráno vstávám osvěžená. Konečně vím, jaké to je dobře spát.",
+    name: "Tereza B.",
+  },
+];
+
 const faq = [
   {
     q: "Pomůže mi to i s váhou?",
@@ -137,6 +164,26 @@ export default function PlnaSilyPage() {
             >
               Mám zájem
             </a>
+          </div>
+        </section>
+
+        {/* Počítadlo */}
+        <section className="py-16 bg-white border-b border-[var(--cream-dark)]">
+          <div className="max-w-4xl mx-auto px-6">
+            <div className="grid grid-cols-3 gap-8 text-center">
+              <div>
+                <p className="font-heading text-5xl md:text-6xl font-bold text-[var(--gold)] mb-2">240+</p>
+                <p className="text-xs tracking-[0.2em] uppercase text-[var(--muted)] font-light">lidí v komunitě</p>
+              </div>
+              <div>
+                <p className="font-heading text-5xl md:text-6xl font-bold text-[var(--gold)] mb-2">2</p>
+                <p className="text-xs tracking-[0.2em] uppercase text-[var(--muted)] font-light">kroky každý den</p>
+              </div>
+              <div>
+                <p className="font-heading text-5xl md:text-6xl font-bold text-[var(--gold)] mb-2">6+</p>
+                <p className="text-xs tracking-[0.2em] uppercase text-[var(--muted)] font-light">hodin energie</p>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -220,6 +267,35 @@ export default function PlnaSilyPage() {
                   >
                     Mám zájem →
                   </a>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Reference */}
+        <section className="py-28 bg-white">
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="text-center mb-16">
+              <p className="text-xs tracking-[0.4em] uppercase text-[var(--gold)] mb-5">Reference</p>
+              <h2 className="font-heading text-4xl md:text-5xl font-bold text-[var(--foreground)]">
+                Co říká <span className="text-[var(--gold)]">komunita</span>
+              </h2>
+            </div>
+            <div className="grid md:grid-cols-3 gap-8">
+              {testimonials.map((t, i) => (
+                <div key={i} className="bg-[var(--cream)] p-8">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="flex-1 h-px bg-[var(--gold-light)]" />
+                    <div className="w-1.5 h-1.5 rotate-45 bg-[var(--gold)]" />
+                    <div className="flex-1 h-px bg-[var(--gold-light)]" />
+                  </div>
+                  <p className="text-[var(--muted)] font-light leading-relaxed italic mb-6">
+                    „{t.text}"
+                  </p>
+                  <p className="text-xs tracking-[0.2em] uppercase text-[var(--gold)] font-medium">
+                    {t.name}
+                  </p>
                 </div>
               ))}
             </div>
