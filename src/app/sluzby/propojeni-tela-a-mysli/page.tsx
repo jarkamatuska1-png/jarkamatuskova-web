@@ -1,6 +1,7 @@
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 
 const PAGE_URL = "https://jarkamatuskova.cz/sluzby/propojeni-tela-a-mysli";
@@ -259,29 +260,43 @@ export default function PropojeniPage() {
 
         {/* Sekce 4: Metoda JIH® */}
         <section className="py-32 bg-[var(--cream)]">
-          <div className="max-w-2xl mx-auto px-6">
-            <p className="text-xs tracking-[0.4em] uppercase text-[var(--gold)] mb-6">Metoda</p>
-            <h2 className="font-heading text-4xl md:text-5xl font-bold text-[var(--foreground)] mb-6">
-              V metodě JIH® tělo nevnímáme<br />
-              <span className="text-[var(--gold)]">jako překážku.</span>
-            </h2>
-            <p className="text-xl text-[var(--foreground)] font-medium mb-10">Vnímáme ho jako bránu k informaci.</p>
-            <div className="space-y-5 text-[var(--muted)] font-light leading-loose text-lg">
-              <p>
-                Nepracujeme s tělem proto, abychom ho přetlačily.<br />
-                Ani proto, abychom ho rychle opravily.
-              </p>
-              <p>Jdeme hlouběji.</p>
-              <p>Skrze tělo, emoce a vnitřní vnímání se dostáváme k tomu, co často nejde pochopit jen hlavou.</p>
-              <p>
-                K nevyřčeným pravdám.<br />
-                K postojům, které už dávno nejsou tvoje.<br />
-                K místům, kde ses naučila přežít, ale přestala jsi žít.
-              </p>
-              <p>
-                JIH® není o tom, aby ses stala někým jiným.<br />
-                Je o tom, aby ses přestala ztrácet sama sobě.
-              </p>
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="grid md:grid-cols-2 gap-16 items-center">
+              <div className="relative">
+                <Image
+                  src="/images/jarka-propojeni.png"
+                  alt="Jarka Matušková při práci s klientkami"
+                  width={580}
+                  height={650}
+                  className="object-cover w-full"
+                />
+                <div className="absolute -top-4 -left-4 w-20 h-20 border border-[var(--gold)] opacity-25 pointer-events-none" />
+              </div>
+              <div>
+                <p className="text-xs tracking-[0.4em] uppercase text-[var(--gold)] mb-6">Metoda</p>
+                <h2 className="font-heading text-4xl md:text-5xl font-bold text-[var(--foreground)] mb-6">
+                  V metodě JIH® tělo nevnímáme<br />
+                  <span className="text-[var(--gold)]">jako překážku.</span>
+                </h2>
+                <p className="text-xl text-[var(--foreground)] font-medium mb-10">Vnímáme ho jako bránu k informaci.</p>
+                <div className="space-y-5 text-[var(--muted)] font-light leading-loose text-lg">
+                  <p>
+                    Nepracujeme s tělem proto, abychom ho přetlačily.<br />
+                    Ani proto, abychom ho rychle opravily.
+                  </p>
+                  <p>Jdeme hlouběji.</p>
+                  <p>Skrze tělo, emoce a vnitřní vnímání se dostáváme k tomu, co často nejde pochopit jen hlavou.</p>
+                  <p>
+                    K nevyřčeným pravdám.<br />
+                    K postojům, které už dávno nejsou tvoje.<br />
+                    K místům, kde ses naučila přežít, ale přestala jsi žít.
+                  </p>
+                  <p>
+                    JIH® není o tom, aby ses stala někým jiným.<br />
+                    Je o tom, aby ses přestala ztrácet sama sobě.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </section>
