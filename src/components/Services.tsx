@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const services = [
   {
     number: "01",
@@ -6,7 +8,7 @@ const services = [
     description:
       "Osobní rozvoj zaměřený na seberealizaci. Společně pracujeme s tvou energií, postoji a myšlenkami, aby tvůj život byl takový, jaký si přeješ.",
     cta: "Zjistit více",
-    href: "#kontakt",
+    href: "/sluzby/metoda-jih",
   },
   {
     number: "02",
@@ -15,16 +17,16 @@ const services = [
     description:
       "Propojení osobního růstu s profesním úspěchem. Fyzické zdraví a duševní pohoda nejdou odděleně — ukážu ti, jak je sladit.",
     cta: "Zjistit více",
-    href: "#kontakt",
+    href: "/sluzby/propojeni-tela-a-mysli",
   },
   {
     number: "03",
     category: "Energie každý den",
     title: "Plná síly",
     description:
-      "Fyzická podpora prostřednictvím produktů PowerCocktail (ráno) a Restorate (večer). Energie pro každý den, přirozeně.",
+      "Fyzická podpora pro každý den. Ráno nastartuj, večer regeneruj — a cítí se lépe než kdykoliv dřív.",
     cta: "Více o produktech",
-    href: "#palna-sily",
+    href: "/sluzby/plna-sily",
   },
 ];
 
@@ -64,12 +66,12 @@ export default function Services() {
                   {service.description}
                 </p>
               </div>
-              <a
+              <Link
                 href={service.href}
                 className="hidden md:inline-block whitespace-nowrap text-xs tracking-[0.2em] uppercase text-[var(--gold)] border-b border-[var(--gold)] pb-0.5 hover:border-[var(--gold-dark)] hover:text-[var(--gold-dark)] transition-colors duration-200"
               >
                 {service.cta} →
-              </a>
+              </Link>
             </div>
           ))}
         </div>
