@@ -12,7 +12,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Chybí konfigurace." }, { status: 500 });
   }
 
-  const res = await fetch("https://freli.ecomailapp.cz/api/lists/23/subscribe", {
+  const res = await fetch("https://api2.ecomailapp.cz/lists/23/subscribe", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
