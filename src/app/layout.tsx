@@ -13,7 +13,7 @@ const dmSans = DM_Sans({
 
 const outfit = Outfit({
   variable: "--font-syne",
-  subsets: ["latin"],
+  subsets: ["latin", "latin-ext"],
   weight: ["300", "400", "500", "600", "700", "800"],
 });
 
