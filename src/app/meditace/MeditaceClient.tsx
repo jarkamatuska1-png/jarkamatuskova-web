@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 
@@ -27,8 +28,20 @@ export default function MeditaceClient() {
       <Nav />
       <main className="bg-white">
 
-        {/* Hero section */}
-        <section className="pt-40 pb-28 bg-[var(--cream)]">
+        {/* Hero image */}
+        <div className="w-full pt-[72px]">
+          <Image
+            src="/images/meditace-hero.png"
+            alt="Aktivační meditace – Zbav se tíhy svého těla"
+            width={1920}
+            height={800}
+            className="w-full h-auto object-cover"
+            priority
+          />
+        </div>
+
+        {/* Hero text */}
+        <section className="py-20 bg-[var(--cream)]">
           <div className="max-w-3xl mx-auto px-6 text-center">
             <p className="text-xs tracking-[0.4em] uppercase text-[var(--gold)] mb-5">
               Aktivační meditace zdarma
