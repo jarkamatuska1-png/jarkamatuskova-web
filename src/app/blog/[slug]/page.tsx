@@ -134,6 +134,21 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
                   </h2>
                 );
               }
+              const youtubeMatch = para.match(/^\[youtube:([a-zA-Z0-9_-]+)\]$/);
+              if (youtubeMatch) {
+                const videoId = youtubeMatch[1];
+                return (
+                  <div key={i} className="relative w-full my-8" style={{ paddingBottom: "56.25%" }}>
+                    <iframe
+                      src={`https://www.youtube.com/embed/${videoId}`}
+                      title="YouTube video"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="absolute inset-0 w-full h-full rounded-sm"
+                    />
+                  </div>
+                );
+              }
               return <p key={i}>{para}</p>;
             })}
           </article>
