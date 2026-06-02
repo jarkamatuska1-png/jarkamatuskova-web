@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
 
 const links = [
   { href: "/#o-mne", label: "O mně" },
@@ -14,19 +15,52 @@ const links = [
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [barVisible, setBarVisible] = useState(false);
 
   useEffect(() => {
+    const dismissed = localStorage.getItem("meditace-bar-dismissed");
+    if (!dismissed) setBarVisible(true);
+
     const onScroll = () => setScrolled(window.scrollY > 40);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const dismissBar = () => {
+    localStorage.setItem("meditace-bar-dismissed", "1");
+    setBarVisible(false);
+  };
+
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-white/95 backdrop-blur-sm border-b border-[var(--cream-dark)]" : "bg-transparent"
-      }`}
-    >
+    <header className="fixed top-0 left-0 right-0 z-50">
+
+      {/* Announcement bar */}
+      {barVisible && (
+        <div className="bg-[var(--foreground)] px-6 py-2.5 flex items-center justify-center gap-4">
+          <p className="text-white/80 text-xs font-light text-center">
+            🎧 Meditace zdarma —{" "}
+            <Link
+              href="/meditace"
+              className="text-[var(--gold)] underline underline-offset-2 hover:text-[var(--gold-light)] transition-colors font-medium"
+            >
+              Tělo, které už nemusí bojovat
+            </Link>
+          </p>
+          <button
+            onClick={dismissBar}
+            aria-label="Zavřít"
+            className="text-white/40 hover:text-white transition-colors text-base leading-none shrink-0"
+          >
+            ×
+          </button>
+        </div>
+      )}
+
+      <div
+        className={`transition-all duration-300 ${
+          scrolled ? "bg-white/95 backdrop-blur-sm border-b border-[var(--cream-dark)]" : "bg-transparent"
+        }`}
+      >
       <div className="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
         <a href="/" className="font-heading text-base font-bold tracking-[0.15em] uppercase text-[var(--foreground)]">
           Jarka Matušková
@@ -72,6 +106,7 @@ export default function Nav() {
           ))}
         </div>
       )}
+      </div>
     </header>
   );
 }
