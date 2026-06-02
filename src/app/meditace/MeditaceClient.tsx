@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 
@@ -20,7 +21,14 @@ export default function MeditaceClient() {
       body: JSON.stringify({ name, email }),
     });
 
-    setStatus(res.ok ? "sent" : "error");
+    if (res.ok) {
+      if (typeof window !== "undefined" && typeof (window as unknown as { fbq?: (...args: unknown[]) => void }).fbq === "function") {
+        (window as unknown as { fbq: (...args: unknown[]) => void }).fbq("track", "Lead");
+      }
+      setStatus("sent");
+    } else {
+      setStatus("error");
+    }
   };
 
   return (
@@ -141,7 +149,12 @@ export default function MeditaceClient() {
                 )}
 
                 <p className="text-[var(--muted)] text-xs font-light mt-2">
-                  Žádný spam. Odhlásit se můžeš kdykoliv.
+                  Žádný spam. Odhlásit se můžeš kdykoliv.{" "}
+                  Odesláním souhlasíš se{" "}
+                  <Link href="/gdpr" className="underline hover:text-[var(--gold)] transition-colors">
+                    zpracováním osobních údajů
+                  </Link>
+                  .
                 </p>
               </form>
             )}
