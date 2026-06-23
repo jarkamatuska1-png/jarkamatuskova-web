@@ -54,7 +54,7 @@ export default function MeditaceClient() {
             <p className="text-xs tracking-[0.4em] uppercase text-[var(--gold)] mb-5">
               Aktivační meditace zdarma
             </p>
-            <h1 className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold text-[var(--foreground)] leading-tight mb-8">
+            <h1 className="font-heading text-5xl md:text-6xl lg:text-7xl font-semibold text-[var(--foreground)] leading-tight mb-8">
               Tělo, které už{" "}
               <span className="text-[var(--gold)]">nemusí bojovat</span>
             </h1>

@@ -9,7 +9,7 @@ export default function NotFound() {
       <main className="min-h-screen bg-[var(--cream)] flex items-center">
         <div className="max-w-3xl mx-auto px-6 py-32 text-center">
           <p className="text-xs tracking-[0.4em] uppercase text-[var(--gold)] mb-5">Chyba 404</p>
-          <h1 className="font-heading text-6xl md:text-8xl font-bold text-[var(--foreground)] leading-tight mb-8">
+          <h1 className="font-heading text-6xl md:text-8xl font-semibold text-[var(--foreground)] leading-tight mb-8">
             Stránka<br />
             <span className="text-[var(--gold)]">neexistuje</span>
           </h1>

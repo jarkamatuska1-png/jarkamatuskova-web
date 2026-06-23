@@ -38,9 +38,9 @@ export default function Services() {
           <p className="text-xs tracking-[0.4em] uppercase text-[var(--gold)] mb-5">
             Co nabízím
           </p>
-          <h2 className="font-heading text-5xl md:text-6xl font-bold text-[var(--foreground)]">
-            Služby &{" "}
-            <span className="text-[var(--gold)]">programy</span>
+          <h2 className="font-heading text-5xl md:text-6xl font-semibold text-[var(--foreground)]">
+            Služby a{" "}
+            <span className="text-[var(--gold)] italic">programy</span>
           </h2>
         </div>
 

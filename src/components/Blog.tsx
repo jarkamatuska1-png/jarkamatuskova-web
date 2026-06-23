@@ -5,13 +5,13 @@ export default function Blog() {
   const posts = getAllPosts().slice(0, 3);
 
   return (
-    <section id="blog" className="py-28 bg-[var(--cream)]">
+    <section id="blog" className="py-28 bg-white">
       <div className="max-w-6xl mx-auto px-6">
         <div className="flex items-end justify-between mb-20">
           <div>
             <p className="text-xs tracking-[0.4em] uppercase text-[var(--gold)] mb-5">Blog</p>
             <h2 className="font-heading text-5xl md:text-6xl font-bold text-[var(--foreground)]">
-              Inspirace & <span className="text-[var(--gold)]">články</span>
+              Inspirace a <span className="text-[var(--gold)] italic">články</span>
             </h2>
           </div>
           <Link

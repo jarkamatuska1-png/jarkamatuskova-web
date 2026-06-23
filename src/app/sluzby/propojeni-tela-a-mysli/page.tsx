@@ -124,7 +124,7 @@ export default function PropojeniPage() {
         <section className="pt-44 pb-36 bg-[var(--cream)]">
           <div className="max-w-3xl mx-auto px-6 text-center">
             <p className="text-xs tracking-[0.4em] uppercase text-[var(--gold)] mb-8">Propojení těla a mysli</p>
-            <h1 className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold text-[var(--foreground)] leading-tight mb-6">
+            <h1 className="font-heading text-5xl md:text-6xl lg:text-7xl font-semibold text-[var(--foreground)] leading-tight mb-6">
               Tělo není tvůj nepřítel.
             </h1>
             <p className="font-heading text-2xl md:text-3xl font-medium text-[var(--gold)] mb-16 leading-snug">
@@ -158,7 +158,7 @@ export default function PropojeniPage() {
                 href={WA}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block px-10 py-4 bg-[var(--gold)] text-white text-xs tracking-[0.25em] uppercase font-medium hover:bg-[var(--gold-dark)] transition-colors duration-300"
+                className="inline-block px-10 py-4 bg-[var(--gold)] text-[var(--foreground)] text-xs tracking-[0.25em] uppercase font-medium hover:bg-[var(--gold-dark)] transition-colors duration-300"
               >
                 Chci podporu pro tělo
               </a>
@@ -175,7 +175,7 @@ export default function PropojeniPage() {
         {/* Sekce 1: Možná to znáš */}
         <section className="py-32 bg-white">
           <div className="max-w-2xl mx-auto px-6">
-            <h2 className="font-heading text-4xl md:text-5xl font-bold text-[var(--foreground)] mb-12">
+            <h2 className="font-heading text-4xl md:text-5xl font-semibold text-[var(--foreground)] mb-12">
               Možná to <span className="text-[var(--gold)]">znáš…</span>
             </h2>
             <div className="space-y-5 text-[var(--muted)] font-light leading-loose text-lg">
@@ -201,7 +201,7 @@ export default function PropojeniPage() {
         {/* Sekce 2: Co tělo ukazuje */}
         <section className="py-32 bg-[var(--cream)]">
           <div className="max-w-2xl mx-auto px-6">
-            <h2 className="font-heading text-4xl md:text-5xl font-bold text-[var(--foreground)] mb-8">
+            <h2 className="font-heading text-4xl md:text-5xl font-semibold text-[var(--foreground)] mb-8">
               Co tělo <span className="text-[var(--gold)]">ukazuje</span>
             </h2>
             <p className="text-xl text-[var(--foreground)] font-medium mb-10 leading-relaxed">
@@ -225,7 +225,7 @@ export default function PropojeniPage() {
 
             {/* Quote block */}
             <blockquote className="border-l-2 border-[var(--gold)] pl-8 py-2">
-              <p className="font-heading text-2xl md:text-3xl font-bold text-[var(--foreground)] leading-snug">
+              <p className="font-heading text-2xl md:text-3xl font-semibold text-[var(--foreground)] leading-snug">
                 „Tady už nejdeš v pravdě."
               </p>
             </blockquote>
@@ -237,7 +237,7 @@ export default function PropojeniPage() {
           <div className="max-w-6xl mx-auto px-6">
             <div className="grid md:grid-cols-2 gap-16 items-center">
               <div>
-                <h2 className="font-heading text-4xl md:text-5xl font-bold text-[var(--foreground)] mb-10">
+                <h2 className="font-heading text-4xl md:text-5xl font-semibold text-[var(--foreground)] mb-10">
                   Nejsi <span className="text-[var(--gold)]">rozbitá.</span>
                 </h2>
                 <div className="space-y-5 text-[var(--muted)] font-light leading-loose text-lg">
@@ -288,7 +288,7 @@ export default function PropojeniPage() {
               </div>
               <div>
                 <p className="text-xs tracking-[0.4em] uppercase text-[var(--gold)] mb-6">Metoda</p>
-                <h2 className="font-heading text-4xl md:text-5xl font-bold text-[var(--foreground)] mb-6">
+                <h2 className="font-heading text-4xl md:text-5xl font-semibold text-[var(--foreground)] mb-6">
                   V metodě JIH® tělo nevnímáme<br />
                   <span className="text-[var(--gold)]">jako překážku.</span>
                 </h2>
@@ -318,7 +318,7 @@ export default function PropojeniPage() {
         {/* Sekce 5: Jak tělo mluví + mid CTA */}
         <section className="py-32 bg-white">
           <div className="max-w-2xl mx-auto px-6">
-            <h2 className="font-heading text-4xl md:text-5xl font-bold text-[var(--foreground)] mb-8">
+            <h2 className="font-heading text-4xl md:text-5xl font-semibold text-[var(--foreground)] mb-8">
               Jak tělo <span className="text-[var(--gold)]">mluví</span>
             </h2>
             <p className="text-xl text-[var(--foreground)] font-medium mb-10">
@@ -347,7 +347,7 @@ export default function PropojeniPage() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
                   href="/sluzby/metoda-jih"
-                  className="inline-block px-10 py-4 bg-[var(--gold)] text-white text-xs tracking-[0.25em] uppercase font-medium hover:bg-[var(--gold-dark)] transition-colors duration-300 text-center"
+                  className="inline-block px-10 py-4 bg-[var(--gold)] text-[var(--foreground)] text-xs tracking-[0.25em] uppercase font-medium hover:bg-[var(--gold-dark)] transition-colors duration-300 text-center"
                 >
                   Metoda JIH®
                 </Link>
@@ -363,9 +363,9 @@ export default function PropojeniPage() {
         </section>
 
         {/* Trust quote */}
-        <section className="py-20 bg-[var(--foreground)]">
+        <section className="py-20 bg-[var(--cream)]">
           <div className="max-w-2xl mx-auto px-6 text-center">
-            <p className="font-heading text-2xl md:text-3xl font-medium text-white leading-relaxed">
+            <p className="font-heading text-2xl md:text-3xl font-medium text-[var(--foreground)] leading-relaxed">
               Tělo není slabost.<br />
               <span className="text-[var(--gold)]">Tělo je pravdivost, která už nechce být přehlížená.</span>
             </p>
@@ -375,7 +375,7 @@ export default function PropojeniPage() {
         {/* Sekce 6: Nestačí myslet pozitivně */}
         <section className="py-32 bg-white">
           <div className="max-w-2xl mx-auto px-6">
-            <h2 className="font-heading text-4xl md:text-5xl font-bold text-[var(--foreground)] mb-10">
+            <h2 className="font-heading text-4xl md:text-5xl font-semibold text-[var(--foreground)] mb-10">
               Někdy nestačí<br />
               <span className="text-[var(--gold)]">myslet pozitivně.</span>
             </h2>
@@ -396,7 +396,7 @@ export default function PropojeniPage() {
         {/* Sekce 7: Tady nemusíš nic dokazovat */}
         <section className="py-32 bg-[var(--cream)]">
           <div className="max-w-2xl mx-auto px-6">
-            <h2 className="font-heading text-4xl md:text-5xl font-bold text-[var(--foreground)] mb-10">
+            <h2 className="font-heading text-4xl md:text-5xl font-semibold text-[var(--foreground)] mb-10">
               Tady nemusíš<br />
               <span className="text-[var(--gold)]">nic dokazovat.</span>
             </h2>
@@ -422,7 +422,7 @@ export default function PropojeniPage() {
         {/* Sekce 8: Závěr */}
         <section className="py-32 bg-white">
           <div className="max-w-2xl mx-auto px-6">
-            <h2 className="font-heading text-4xl md:text-5xl font-bold text-[var(--foreground)] mb-10">
+            <h2 className="font-heading text-4xl md:text-5xl font-semibold text-[var(--foreground)] mb-10">
               Tvoje tělo možná<br />
               <span className="text-[var(--gold)]">není problém.</span>
             </h2>
@@ -442,13 +442,13 @@ export default function PropojeniPage() {
         </section>
 
         {/* Finální CTA */}
-        <section className="py-32 bg-[var(--foreground)]">
+        <section className="py-32 bg-[var(--cream)]">
           <div className="max-w-3xl mx-auto px-6 text-center">
             <p className="text-xs tracking-[0.4em] uppercase text-[var(--gold-light)] mb-6">Začni vnímat</p>
-            <h2 className="font-heading text-4xl md:text-5xl font-bold text-white mb-10 leading-tight">
+            <h2 className="font-heading text-4xl md:text-5xl font-semibold text-[var(--foreground)] mb-10 leading-tight">
               Chceš začít vnímat své tělo jinak?
             </h2>
-            <div className="text-white/60 font-light leading-loose mb-12 max-w-lg mx-auto space-y-1">
+            <div className="text-[var(--muted)] font-light leading-loose mb-12 max-w-lg mx-auto space-y-1">
               <p>Ne jako problém.</p>
               <p>Ne jako slabost.</p>
               <p>Ne jako něco, co musíš umlčet.</p>
@@ -462,13 +462,13 @@ export default function PropojeniPage() {
                 href={WA}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block px-10 py-4 bg-[var(--gold)] text-white text-xs tracking-[0.25em] uppercase font-medium hover:bg-[var(--gold-dark)] transition-colors duration-300"
+                className="inline-block px-10 py-4 bg-[var(--gold)] text-[var(--foreground)] text-xs tracking-[0.25em] uppercase font-medium hover:bg-[var(--gold-dark)] transition-colors duration-300"
               >
                 Chci podporu pro tělo
               </a>
               <Link
                 href="/sluzby/metoda-jih"
-                className="inline-block px-10 py-4 border border-white/30 text-white text-xs tracking-[0.25em] uppercase font-medium hover:border-white hover:bg-white/10 transition-all duration-300"
+                className="inline-block px-10 py-4 border border-[var(--cream-dark)] text-[var(--foreground)] text-xs tracking-[0.25em] uppercase font-medium hover:border-white hover:bg-white/10 transition-all duration-300"
               >
                 Chci poznat metodu JIH®
               </Link>

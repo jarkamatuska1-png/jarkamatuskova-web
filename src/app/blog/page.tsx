@@ -36,8 +36,8 @@ export default function BlogPage() {
         <div className="max-w-6xl mx-auto px-6">
           <div className="mb-20">
             <p className="text-xs tracking-[0.4em] uppercase text-[var(--gold)] mb-5">Blog</p>
-            <h1 className="font-heading text-5xl md:text-6xl font-bold text-[var(--foreground)]">
-              Inspirace & <span className="text-[var(--gold)]">články</span>
+            <h1 className="font-heading text-5xl md:text-6xl font-semibold text-[var(--foreground)]">
+              Inspirace a <span className="text-[var(--gold)] italic">články</span>
             </h1>
           </div>
 

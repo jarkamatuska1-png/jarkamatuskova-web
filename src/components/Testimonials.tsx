@@ -33,7 +33,7 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section id="reference" className="py-28 bg-white">
+    <section id="reference" className="py-28 bg-[var(--cream)]">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-20">
           <p className="text-xs tracking-[0.4em] uppercase text-[var(--gold)] mb-5">

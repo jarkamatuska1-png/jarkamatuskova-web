@@ -6,7 +6,7 @@ import Testimonials from "@/components/Testimonials";
 import Blog from "@/components/Blog";
 import Method from "@/components/Method";
 import Products from "@/components/Products";
-import NewsletterSignup from "@/components/NewsletterSignup";
+import Closing from "@/components/Closing";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
@@ -51,7 +51,7 @@ export default function Home() {
         <Blog />
         <Method />
         <Products />
-        <NewsletterSignup />
+        <Closing />
         <Contact />
       </main>
       <Footer />

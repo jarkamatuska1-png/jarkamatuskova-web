@@ -155,7 +155,7 @@ export default function MetodaJihPage() {
         <section className="pt-40 pb-28 bg-[var(--cream)]">
           <div className="max-w-4xl mx-auto px-6 text-center">
             <p className="text-xs tracking-[0.4em] uppercase text-[var(--gold)] mb-5">Osobní vedení</p>
-            <h1 className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold text-[var(--foreground)] leading-tight mb-8">
+            <h1 className="font-heading text-5xl md:text-6xl lg:text-7xl font-semibold text-[var(--foreground)] leading-tight mb-8">
               Terapeutická{" "}
               <span className="text-[var(--gold)]">metoda JIH®</span>
             </h1>
@@ -169,7 +169,7 @@ export default function MetodaJihPage() {
             </p>
             <a
               href="#spoluprace"
-              className="inline-block px-10 py-4 bg-[var(--gold)] text-white text-xs tracking-[0.25em] uppercase font-medium hover:bg-[var(--gold-dark)] transition-colors duration-300"
+              className="inline-block px-10 py-4 bg-[var(--gold)] text-[var(--foreground)] text-xs tracking-[0.25em] uppercase font-medium hover:bg-[var(--gold-dark)] transition-colors duration-300"
             >
               Chci začít
             </a>
@@ -181,7 +181,7 @@ export default function MetodaJihPage() {
           <div className="max-w-6xl mx-auto px-6">
             <div className="text-center mb-20">
               <p className="text-xs tracking-[0.4em] uppercase text-[var(--gold)] mb-5">Základ metody</p>
-              <h2 className="font-heading text-4xl md:text-5xl font-bold text-[var(--foreground)]">
+              <h2 className="font-heading text-4xl md:text-5xl font-semibold text-[var(--foreground)]">
                 Na čem JIH® <span className="text-[var(--gold)]">stojí</span>
               </h2>
             </div>
@@ -206,7 +206,7 @@ export default function MetodaJihPage() {
           <div className="max-w-6xl mx-auto px-6">
             <div className="mb-20">
               <p className="text-xs tracking-[0.4em] uppercase text-[var(--gold)] mb-5">Principy</p>
-              <h2 className="font-heading text-4xl md:text-5xl font-bold text-[var(--foreground)]">
+              <h2 className="font-heading text-4xl md:text-5xl font-semibold text-[var(--foreground)]">
                 Není oblast, kde by{" "}
                 <span className="text-[var(--gold)]">JIH® nepomohl</span>
               </h2>
@@ -234,14 +234,14 @@ export default function MetodaJihPage() {
           <div className="max-w-6xl mx-auto px-6">
             <div className="text-center mb-20">
               <p className="text-xs tracking-[0.4em] uppercase text-[var(--gold)] mb-5">Spolupráce</p>
-              <h2 className="font-heading text-4xl md:text-5xl font-bold text-[var(--foreground)]">
+              <h2 className="font-heading text-4xl md:text-5xl font-semibold text-[var(--foreground)]">
                 Jak <span className="text-[var(--gold)]">pracujeme</span> spolu
               </h2>
             </div>
             <div className="grid md:grid-cols-3 gap-10">
               {offers.map((o, i) => (
                 <div key={i} className="border border-[var(--cream-dark)] p-10 hover:border-[var(--gold)] transition-colors duration-300">
-                  <p className="font-heading text-4xl font-bold text-[var(--gold-light)] mb-6 leading-none">
+                  <p className="font-heading text-4xl font-semibold text-[var(--gold-light)] mb-6 leading-none">
                     {String(i + 1).padStart(2, "0")}
                   </p>
                   <h3 className="font-heading text-xl font-semibold text-[var(--foreground)] mb-4">
@@ -269,7 +269,7 @@ export default function MetodaJihPage() {
           <div className="max-w-6xl mx-auto px-6">
             <div className="text-center mb-20">
               <p className="text-xs tracking-[0.4em] uppercase text-[var(--gold)] mb-5">Reference</p>
-              <h2 className="font-heading text-4xl md:text-5xl font-bold text-[var(--foreground)]">
+              <h2 className="font-heading text-4xl md:text-5xl font-semibold text-[var(--foreground)]">
                 Co říkají <span className="text-[var(--gold)]">klientky</span>
               </h2>
             </div>
@@ -291,14 +291,14 @@ export default function MetodaJihPage() {
         </section>
 
         {/* CTA */}
-        <section className="py-28 bg-[var(--foreground)]">
+        <section className="py-28 bg-[var(--cream)]">
           <div className="max-w-3xl mx-auto px-6 text-center">
-            <p className="text-xs tracking-[0.4em] uppercase text-[var(--gold-light)] mb-5">Začni dnes</p>
-            <h2 className="font-heading text-4xl md:text-5xl font-bold text-white mb-8">
+            <p className="text-xs tracking-[0.4em] uppercase text-[var(--gold)] mb-5">Začni dnes</p>
+            <h2 className="font-heading text-4xl md:text-5xl font-semibold text-[var(--foreground)] mb-8">
               Připravena na nový{" "}
               <span className="text-[var(--gold)]">pohled na život?</span>
             </h2>
-            <p className="text-white/60 font-light leading-relaxed mb-12 max-w-xl mx-auto">
+            <p className="text-[var(--muted)] font-light leading-relaxed mb-12 max-w-xl mx-auto">
               Napiš mi — ráda si s tebou popovídám a odpovím na všechny otázky.
             </p>
             <a

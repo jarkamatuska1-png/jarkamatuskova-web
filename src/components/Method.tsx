@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 
 const pillars = [
@@ -24,7 +23,7 @@ const pillars = [
 
 export default function Method() {
   return (
-    <section id="metoda-jih" className="py-28 bg-white">
+    <section id="metoda-jih" className="py-28 bg-[var(--cream)]">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-20">
           <p className="text-xs tracking-[0.4em] uppercase text-[var(--gold)] mb-5">
@@ -41,35 +40,25 @@ export default function Method() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-16 items-center mb-20">
-          <div className="relative">
-            <Image
-              src="/images/foto-4.png"
-              alt="Jarka Matušková při práci s klientkami"
-              width={560}
-              height={620}
-              className="object-cover w-full"
-            />
-            <div className="absolute -top-4 -left-4 w-24 h-24 border border-[var(--gold)] opacity-25 pointer-events-none" />
-          </div>
-
-          <div className="space-y-10">
-            {pillars.map((pillar) => (
-              <div key={pillar.number} className="group flex gap-6">
-                <p className="font-heading text-5xl font-bold text-[var(--gold-light)] group-hover:text-[var(--gold)] transition-colors duration-300 leading-none pt-1 shrink-0">
-                  {pillar.number}
+        <div className="max-w-2xl mx-auto space-y-0 mb-20">
+          {pillars.map((pillar, i) => (
+            <div
+              key={pillar.number}
+              className={`group flex gap-8 py-10 ${i < pillars.length - 1 ? "border-b border-[var(--cream-dark)]" : ""}`}
+            >
+              <p className="font-heading text-4xl font-semibold text-[var(--gold-light)] group-hover:text-[var(--gold)] transition-colors duration-300 leading-none pt-1 shrink-0 w-10 text-right">
+                {pillar.number}
+              </p>
+              <div>
+                <h3 className="font-heading text-2xl font-semibold text-[var(--foreground)] mb-3 italic">
+                  {pillar.title}
+                </h3>
+                <p className="text-[var(--muted)] leading-relaxed font-light text-[15px]">
+                  {pillar.description}
                 </p>
-                <div>
-                  <h3 className="font-heading text-xl font-semibold text-[var(--foreground)] mb-3 tracking-wide">
-                    {pillar.title}
-                  </h3>
-                  <p className="text-[var(--muted)] leading-relaxed font-light">
-                    {pillar.description}
-                  </p>
-                </div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
 
         <div className="text-center">

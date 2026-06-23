@@ -146,7 +146,7 @@ export default function PlnaSilyPage() {
         <section className="pt-40 pb-28 bg-[var(--cream)]">
           <div className="max-w-4xl mx-auto px-6 text-center">
             <p className="text-xs tracking-[0.4em] uppercase text-[var(--gold)] mb-5">Energie každý den</p>
-            <h1 className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold text-[var(--foreground)] leading-tight mb-8">
+            <h1 className="font-heading text-5xl md:text-6xl lg:text-7xl font-semibold text-[var(--foreground)] leading-tight mb-8">
               Plná <span className="text-[var(--gold)]">síly</span>
             </h1>
             <p className="text-xl text-[var(--muted)] font-light leading-relaxed max-w-2xl mx-auto mb-4">
@@ -161,7 +161,7 @@ export default function PlnaSilyPage() {
               href={WA}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-10 py-4 bg-[var(--gold)] text-white text-xs tracking-[0.25em] uppercase font-medium hover:bg-[var(--gold-dark)] transition-colors duration-300"
+              className="inline-block px-10 py-4 bg-[var(--gold)] text-[var(--foreground)] text-xs tracking-[0.25em] uppercase font-medium hover:bg-[var(--gold-dark)] transition-colors duration-300"
             >
               Mám zájem
             </a>
@@ -173,15 +173,15 @@ export default function PlnaSilyPage() {
           <div className="max-w-4xl mx-auto px-6">
             <div className="grid grid-cols-3 gap-8 text-center">
               <div>
-                <p className="font-heading text-5xl md:text-6xl font-bold text-[var(--gold)] mb-2">240+</p>
+                <p className="font-heading text-5xl md:text-6xl font-semibold text-[var(--gold)] mb-2">240+</p>
                 <p className="text-xs tracking-[0.2em] uppercase text-[var(--muted)] font-light">lidí v komunitě</p>
               </div>
               <div>
-                <p className="font-heading text-5xl md:text-6xl font-bold text-[var(--gold)] mb-2">2</p>
+                <p className="font-heading text-5xl md:text-6xl font-semibold text-[var(--gold)] mb-2">2</p>
                 <p className="text-xs tracking-[0.2em] uppercase text-[var(--muted)] font-light">kroky každý den</p>
               </div>
               <div>
-                <p className="font-heading text-5xl md:text-6xl font-bold text-[var(--gold)] mb-2">6+</p>
+                <p className="font-heading text-5xl md:text-6xl font-semibold text-[var(--gold)] mb-2">6+</p>
                 <p className="text-xs tracking-[0.2em] uppercase text-[var(--muted)] font-light">hodin energie</p>
               </div>
             </div>
@@ -221,7 +221,7 @@ export default function PlnaSilyPage() {
           <div className="max-w-6xl mx-auto px-6">
             <div className="text-center mb-20">
               <p className="text-xs tracking-[0.4em] uppercase text-[var(--gold)] mb-5">Produkty</p>
-              <h2 className="font-heading text-4xl md:text-5xl font-bold text-[var(--foreground)]">
+              <h2 className="font-heading text-4xl md:text-5xl font-semibold text-[var(--foreground)]">
                 Ráno nastartuj,{" "}
                 <span className="text-[var(--gold)]">večer regeneruj</span>
               </h2>
@@ -229,29 +229,22 @@ export default function PlnaSilyPage() {
                 Jeden sáček ráno, jeden večer. Žádná věda, žádný stres.
               </p>
             </div>
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid md:grid-cols-2 gap-px bg-[var(--cream-dark)]">
               {benefits.map((b) => (
                 <div
                   key={b.name}
-                  className={`p-12 relative overflow-hidden ${
-                    b.dark ? "bg-[var(--foreground)]" : "bg-white"
-                  }`}
+                  className="p-12 bg-white"
                 >
-                  <div
-                    className={`absolute -right-12 -bottom-12 w-48 h-48 rounded-full border opacity-20 pointer-events-none ${
-                      b.dark ? "border-white" : "border-[var(--gold-light)]"
-                    }`}
-                  />
-                  <p className={`text-xs tracking-[0.3em] uppercase mb-2 ${b.dark ? "text-[var(--gold-light)]" : "text-[var(--gold)]"}`}>
+                  <p className="text-[10px] tracking-[0.4em] uppercase text-[var(--gold)] mb-4">
                     {b.drink}
                   </p>
-                  <h3 className={`font-heading text-3xl font-bold mb-8 ${b.dark ? "text-white" : "text-[var(--foreground)]"}`}>
+                  <h3 className="font-heading text-3xl font-semibold text-[var(--foreground)] mb-8">
                     {b.name}
                   </h3>
                   <ul className="space-y-3 mb-10">
                     {b.items.map((item, i) => (
-                      <li key={i} className={`flex items-center gap-3 font-light ${b.dark ? "text-white/70" : "text-[var(--muted)]"}`}>
-                        <div className={`w-1 h-1 rotate-45 shrink-0 ${b.dark ? "bg-[var(--gold-light)]" : "bg-[var(--gold)]"}`} />
+                      <li key={i} className="flex items-center gap-3 font-light text-[var(--muted)] text-[15px]">
+                        <div className="w-1 h-1 rotate-45 shrink-0 bg-[var(--gold)]" />
                         {item}
                       </li>
                     ))}
@@ -260,11 +253,7 @@ export default function PlnaSilyPage() {
                     href={WA}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`inline-block text-xs tracking-[0.2em] uppercase border-b pb-0.5 transition-colors duration-200 ${
-                      b.dark
-                        ? "text-[var(--gold-light)] border-[var(--gold-light)] hover:text-white hover:border-white"
-                        : "text-[var(--gold)] border-[var(--gold)] hover:text-[var(--gold-dark)] hover:border-[var(--gold-dark)]"
-                    }`}
+                    className="inline-block text-[10px] tracking-[0.3em] uppercase border-b border-[var(--gold)] pb-0.5 text-[var(--gold)] hover:text-[var(--gold-dark)] hover:border-[var(--gold-dark)] transition-colors duration-200"
                   >
                     Mám zájem →
                   </a>
@@ -279,7 +268,7 @@ export default function PlnaSilyPage() {
           <div className="max-w-6xl mx-auto px-6">
             <div className="text-center mb-16">
               <p className="text-xs tracking-[0.4em] uppercase text-[var(--gold)] mb-5">Reference</p>
-              <h2 className="font-heading text-4xl md:text-5xl font-bold text-[var(--foreground)]">
+              <h2 className="font-heading text-4xl md:text-5xl font-semibold text-[var(--foreground)]">
                 Co říká <span className="text-[var(--gold)]">komunita</span>
               </h2>
             </div>
@@ -308,7 +297,7 @@ export default function PlnaSilyPage() {
           <div className="max-w-3xl mx-auto px-6">
             <div className="mb-16">
               <p className="text-xs tracking-[0.4em] uppercase text-[var(--gold)] mb-5">Časté dotazy</p>
-              <h2 className="font-heading text-4xl md:text-5xl font-bold text-[var(--foreground)]">
+              <h2 className="font-heading text-4xl md:text-5xl font-semibold text-[var(--foreground)]">
                 Nejčastější <span className="text-[var(--gold)]">otázky</span>
               </h2>
             </div>
@@ -332,7 +321,7 @@ export default function PlnaSilyPage() {
           <div className="max-w-4xl mx-auto px-6">
             <div className="text-center mb-12">
               <p className="text-xs tracking-[0.4em] uppercase text-[var(--gold)] mb-5">Zdarma</p>
-              <h2 className="font-heading text-4xl md:text-5xl font-bold text-[var(--foreground)] mb-6">
+              <h2 className="font-heading text-4xl md:text-5xl font-semibold text-[var(--foreground)] mb-6">
                 Rezervuj si <span className="text-[var(--gold)]">bezplatný hovor</span>
               </h2>
               <p className="text-[var(--muted)] font-light leading-relaxed max-w-xl mx-auto">
@@ -344,14 +333,14 @@ export default function PlnaSilyPage() {
         </section>
 
         {/* CTA */}
-        <section className="py-28 bg-[var(--foreground)]">
+        <section className="py-28 bg-[var(--cream)]">
           <div className="max-w-3xl mx-auto px-6 text-center">
-            <p className="text-xs tracking-[0.4em] uppercase text-[var(--gold-light)] mb-5">Jsi připravena?</p>
-            <h2 className="font-heading text-4xl md:text-5xl font-bold text-white mb-8">
+            <p className="text-xs tracking-[0.4em] uppercase text-[var(--gold)] mb-5">Jsi připravena?</p>
+            <h2 className="font-heading text-4xl md:text-5xl font-semibold text-[var(--foreground)] mb-8">
               Začni svůj{" "}
               <span className="text-[var(--gold)]">nový začátek</span>
             </h2>
-            <p className="text-white/60 font-light leading-relaxed mb-12 max-w-xl mx-auto">
+            <p className="text-[var(--muted)] font-light leading-relaxed mb-12 max-w-xl mx-auto">
               Napiš mi — ráda si s tebou popovídám, odpovím na všechny otázky a
               ukážu ti, jak začít.
             </p>

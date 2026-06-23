@@ -22,7 +22,7 @@ export default function GdprPage() {
           </Link>
 
           <p className="text-xs tracking-[0.3em] uppercase text-[var(--gold)] mb-5">Právní informace</p>
-          <h1 className="font-heading text-4xl md:text-5xl font-bold text-[var(--foreground)] leading-tight mb-10">
+          <h1 className="font-heading text-4xl md:text-5xl font-semibold text-[var(--foreground)] leading-tight mb-10">
             Zásady ochrany<br />
             <span className="text-[var(--gold)]">osobních údajů</span>
           </h1>
