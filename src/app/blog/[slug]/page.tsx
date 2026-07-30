@@ -2,8 +2,41 @@ import { getAllPosts, getPostBySlug, formatDate } from "@/lib/blog";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import ShareButtons from "@/components/ShareButtons";
+import type { ReactNode } from "react";
+
+function renderInlineMarkdown(text: string): ReactNode[] {
+  const tokenPattern = /(\*\*[^*]+\*\*|\*[^*]+\*|\[[^\]]+\]\(https?:\/\/[^)]+\))/g;
+
+  return text.split(tokenPattern).map((part, index) => {
+    if (part.startsWith("**") && part.endsWith("**")) {
+      return <strong key={index}>{part.slice(2, -2)}</strong>;
+    }
+
+    if (part.startsWith("*") && part.endsWith("*")) {
+      return <em key={index}>{part.slice(1, -1)}</em>;
+    }
+
+    const linkMatch = part.match(/^\[([^\]]+)\]\((https?:\/\/[^)]+)\)$/);
+    if (linkMatch) {
+      return (
+        <a
+          key={index}
+          href={linkMatch[2]}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[var(--gold)] underline underline-offset-4 hover:text-[var(--gold-dark)]"
+        >
+          {linkMatch[1]}
+        </a>
+      );
+    }
+
+    return part;
+  });
+}
 
 export async function generateStaticParams() {
   return getAllPosts().map((post) => ({ slug: post.slug }));
@@ -14,27 +47,35 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const post = getPostBySlug(slug);
   if (!post) return {};
   const url = `https://jarkamatuskova.cz/blog/${slug}`;
+  const metadataTitle = post.seoTitle ?? post.title;
+  const metadataDescription = post.metaDescription ?? post.excerpt;
+  const metadataImage = post.ogImage ?? "/opengraph-image.png";
   return {
-    title: `${post.title} | Jarka Matušková`,
-    description: post.excerpt,
+    title: `${metadataTitle} | Jarka Matušková`,
+    description: metadataDescription,
     keywords: ["vědomý život", "metoda JIH", "osobní rozvoj", "Jarka Matušková", post.title],
     alternates: { canonical: url },
     openGraph: {
-      title: `${post.title} | Jarka Matušková`,
-      description: post.excerpt,
+      title: `${metadataTitle} | Jarka Matušková`,
+      description: metadataDescription,
       url,
       siteName: "Jarka Matušková",
       locale: "cs_CZ",
       type: "article",
       publishedTime: post.date,
       authors: ["Jarka Matušková"],
-      images: [{ url: "/opengraph-image.png", width: 1200, height: 630, alt: post.title }],
+      images: [{
+        url: metadataImage,
+        width: 1200,
+        height: post.ogImage ? 628 : 630,
+        alt: post.imageAlt ?? post.title,
+      }],
     },
     twitter: {
       card: "summary_large_image",
-      title: `${post.title} | Jarka Matušková`,
-      description: post.excerpt,
-      images: ["/opengraph-image.png"],
+      title: `${metadataTitle} | Jarka Matušková`,
+      description: metadataDescription,
+      images: [metadataImage],
     },
   };
 }
@@ -49,10 +90,11 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     headline: post.title,
-    description: post.excerpt,
+    description: post.metaDescription ?? post.excerpt,
     url: postUrl,
     datePublished: post.date,
     inLanguage: "cs",
+    ...(post.image ? { image: `https://jarkamatuskova.cz${post.image}` } : {}),
     author: {
       "@type": "Person",
       name: "Jarka Matušková",
@@ -77,7 +119,6 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
   const allPosts = getAllPosts();
   const relatedPosts = allPosts
     .filter((p) => p.slug !== slug)
-    .sort(() => Math.random() - 0.5)
     .slice(0, 3);
 
   const paragraphs = post.content
@@ -110,6 +151,23 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
             {post.title}
           </h1>
 
+          {post.lead && (
+            <p className="font-heading text-xl md:text-2xl italic text-[var(--muted)] leading-relaxed mb-10">
+              {post.lead}
+            </p>
+          )}
+
+          {post.image && (
+            <Image
+              src={post.image}
+              alt={post.imageAlt ?? post.title}
+              width={1536}
+              height={1024}
+              priority
+              className="w-full h-auto mb-12"
+            />
+          )}
+
           {/* Gold divider */}
           <div className="flex items-center gap-4 mb-12">
             <div className="flex-1 h-px bg-[var(--gold-light)]" />
@@ -123,14 +181,14 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
               if (para.startsWith("## ")) {
                 return (
                   <h2 key={i} className="font-heading text-2xl font-semibold text-[var(--foreground)] pt-4">
-                    {para.replace("## ", "")}
+                    {renderInlineMarkdown(para.replace("## ", ""))}
                   </h2>
                 );
               }
               if (para.startsWith("# ")) {
                 return (
                   <h2 key={i} className="font-heading text-3xl font-semibold text-[var(--foreground)] pt-4">
-                    {para.replace("# ", "")}
+                    {renderInlineMarkdown(para.replace("# ", ""))}
                   </h2>
                 );
               }
@@ -149,7 +207,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
                   </div>
                 );
               }
-              return <p key={i}>{para}</p>;
+              return <p key={i}>{renderInlineMarkdown(para)}</p>;
             })}
           </article>
 

@@ -9,6 +9,12 @@ export interface Post {
   title: string;
   date: string;
   excerpt: string;
+  lead?: string;
+  seoTitle?: string;
+  metaDescription?: string;
+  image?: string;
+  imageAlt?: string;
+  ogImage?: string;
   content: string;
 }
 
@@ -25,6 +31,12 @@ export function getAllPosts(): Post[] {
         title: data.title ?? "",
         date: data.date ?? "",
         excerpt: data.excerpt ?? "",
+        lead: data.lead,
+        seoTitle: data.seoTitle,
+        metaDescription: data.metaDescription,
+        image: data.image,
+        imageAlt: data.imageAlt,
+        ogImage: data.ogImage,
         content,
       };
     })
@@ -41,6 +53,12 @@ export function getPostBySlug(slug: string): Post | undefined {
     title: data.title ?? "",
     date: data.date ?? "",
     excerpt: data.excerpt ?? "",
+    lead: data.lead,
+    seoTitle: data.seoTitle,
+    metaDescription: data.metaDescription,
+    image: data.image,
+    imageAlt: data.imageAlt,
+    ogImage: data.ogImage,
     content,
   };
 }
