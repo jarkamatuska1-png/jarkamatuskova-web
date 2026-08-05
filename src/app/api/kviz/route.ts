@@ -1,9 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(req: NextRequest) {
-  const { name, email, message } = await req.json();
+  const { name, email, result } = await req.json();
 
-  if (!name || !email || !message) {
+  if (!name || !email) {
     return NextResponse.json({ error: "Chybí povinná pole." }, { status: 400 });
   }
 
@@ -12,6 +12,8 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Chybí konfigurace." }, { status: 500 });
   }
 
+  // Jeden hlavní seznam (24). Výsledek kvízu ukládáme do pole KVIZ_VYSLEDEK
+  // kvůli pozdější segmentaci (kdo je Držitelka / Výkonářka / Probouzející se).
   const res = await fetch("https://api2.ecomailapp.cz/lists/24/subscribe", {
     method: "POST",
     headers: {
@@ -23,10 +25,10 @@ export async function POST(req: NextRequest) {
         email,
         name,
         fields: {
-          MESSAGE: message,
+          KVIZ_VYSLEDEK: result ?? "",
         },
       },
-      trigger_autoresponders: false,
+      trigger_autoresponders: true,
       update_existing: true,
     }),
   });
