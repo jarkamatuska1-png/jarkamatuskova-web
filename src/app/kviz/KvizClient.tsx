@@ -73,7 +73,7 @@ export default function KvizClient() {
         <section className="py-24 pt-[128px] bg-[var(--cream)]">
           <div className="max-w-2xl mx-auto px-6 text-center">
             <p className="text-xs tracking-[0.4em] uppercase text-[var(--gold)] mb-5">
-              Kvíz — zrcadlo
+              Kvíz
             </p>
             <h1 className="font-heading text-4xl md:text-5xl font-semibold text-[var(--foreground)] leading-tight mb-6">
               {quizTitle}
@@ -119,7 +119,7 @@ export default function KvizClient() {
                   <div className="flex-1 h-px bg-[var(--gold-light)]" />
                 </div>
                 <p className="text-xs tracking-[0.3em] uppercase text-[var(--gold)] mb-4 text-center">
-                  Tvoje zrcadlo
+                  Tvůj výsledek
                 </p>
                 <h2 className="font-heading text-3xl md:text-4xl font-semibold text-[var(--foreground)] mb-5 text-center">
                   {result.title}
