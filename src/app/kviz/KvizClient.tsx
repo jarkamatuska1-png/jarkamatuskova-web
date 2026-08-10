@@ -31,6 +31,7 @@ export default function KvizClient() {
   const [phase, setPhase] = useState<"quiz" | "result">("quiz");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [website, setWebsite] = useState(""); // honeypot – lidé nevyplní, roboti ano
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
 
   const resultKey = computeResult(answers);
@@ -59,7 +60,7 @@ export default function KvizClient() {
     const res = await fetch("/api/kviz", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name, email, result: result.title }),
+      body: JSON.stringify({ name, email, result: result.title, website }),
     });
     setStatus(res.ok ? "sent" : "error");
   };
@@ -136,6 +137,17 @@ export default function KvizClient() {
                 </p>
 
                 <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+                  {/* Honeypot – skryté pole. Reální lidé ho nevidí, roboti ho vyplní. */}
+                  <input
+                    type="text"
+                    name="website"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    aria-hidden="true"
+                    value={website}
+                    onChange={(e) => setWebsite(e.target.value)}
+                    style={{ position: "absolute", left: "-9999px", width: 1, height: 1, opacity: 0 }}
+                  />
                   <input
                     type="text"
                     required

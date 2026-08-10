@@ -1,10 +1,19 @@
 import { NextRequest, NextResponse } from "next/server";
+import { guard, isValidEmail, cleanText } from "@/lib/apiGuard";
 
 export async function POST(req: NextRequest) {
-  const { name, email, message } = await req.json();
+  const guarded = await guard(req, "contact");
+  if (!guarded.ok) return guarded.response;
 
-  if (!name || !email || !message) {
+  const name = cleanText(guarded.body.name, 120);
+  const email = cleanText(guarded.body.email, 254);
+  const message = cleanText(guarded.body.message, 5000);
+
+  if (!name || !message) {
     return NextResponse.json({ error: "Chybí povinná pole." }, { status: 400 });
+  }
+  if (!isValidEmail(email)) {
+    return NextResponse.json({ error: "Neplatný e-mail." }, { status: 400 });
   }
 
   const apiKey = process.env.ECOMAIL_API_KEY;

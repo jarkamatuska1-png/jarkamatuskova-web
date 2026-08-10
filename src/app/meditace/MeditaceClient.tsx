@@ -9,6 +9,7 @@ import Footer from "@/components/Footer";
 export default function MeditaceClient() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [website, setWebsite] = useState(""); // honeypot – lidé nevyplní, roboti ano
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -18,7 +19,7 @@ export default function MeditaceClient() {
     const res = await fetch("/api/meditace", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name, email }),
+      body: JSON.stringify({ name, email, website }),
     });
 
     if (res.ok) {
@@ -100,6 +101,17 @@ export default function MeditaceClient() {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+                {/* Honeypot – skryté pole. Reální lidé ho nevidí, roboti ho vyplní. */}
+                <input
+                  type="text"
+                  name="website"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  aria-hidden="true"
+                  value={website}
+                  onChange={(e) => setWebsite(e.target.value)}
+                  style={{ position: "absolute", left: "-9999px", width: 1, height: 1, opacity: 0 }}
+                />
                 <div className="flex flex-col gap-2">
                   <label
                     htmlFor="meditace-name"

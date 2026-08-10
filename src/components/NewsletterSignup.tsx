@@ -5,6 +5,7 @@ import { useState } from "react";
 export default function NewsletterSignup() {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
+  const [website, setWebsite] = useState(""); // honeypot – lidé nevyplní, roboti ano
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -13,7 +14,7 @@ export default function NewsletterSignup() {
     const res = await fetch("/api/contact", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name, email, message: "Přihlášení k newsletteru" }),
+      body: JSON.stringify({ name, email, message: "Přihlášení k newsletteru", website }),
     });
     setStatus(res.ok ? "sent" : "error");
   };
@@ -50,6 +51,17 @@ export default function NewsletterSignup() {
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+              {/* Honeypot – skryté pole. Reální lidé ho nevidí, roboti ho vyplní. */}
+              <input
+                type="text"
+                name="website"
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden="true"
+                value={website}
+                onChange={(e) => setWebsite(e.target.value)}
+                style={{ position: "absolute", left: "-9999px", width: 1, height: 1, opacity: 0 }}
+              />
               <div className="flex flex-col sm:flex-row gap-4">
                 <input
                   type="text"
