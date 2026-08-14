@@ -1,8 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
 import { guard, isValidEmail, cleanText } from "@/lib/apiGuard";
 
+// Sběr e-mailů „svět Heleny" (jecaszit.cz) → Ecomail seznam 29
+const ECOMAIL_LIST_ID = 29;
+
 export async function POST(req: NextRequest) {
-  const guarded = await guard(req, "meditace");
+  const guarded = await guard(req, "helena");
   if (!guarded.ok) return guarded.response;
 
   const name = cleanText(guarded.body.name, 120);
@@ -20,25 +23,28 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Chybí konfigurace." }, { status: 500 });
   }
 
-  const res = await fetch("https://api2.ecomailapp.cz/lists/24/subscribe", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "key": apiKey,
-    },
-    body: JSON.stringify({
-      subscriber_data: {
-        email,
-        name,
+  const res = await fetch(
+    `https://api2.ecomailapp.cz/lists/${ECOMAIL_LIST_ID}/subscribe`,
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        key: apiKey,
       },
-      trigger_autoresponders: true,
-      update_existing: true,
-    }),
-  });
+      body: JSON.stringify({
+        subscriber_data: {
+          email,
+          name,
+        },
+        trigger_autoresponders: false,
+        update_existing: true,
+      }),
+    }
+  );
 
   if (!res.ok) {
     const err = await res.text();
-    console.error("Ecomail error:", err);
+    console.error("Ecomail (Helena) error:", err);
     return NextResponse.json({ error: "Nepodařilo se odeslat." }, { status: 500 });
   }
 

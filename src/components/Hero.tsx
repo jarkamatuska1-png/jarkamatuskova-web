@@ -25,23 +25,24 @@ export default function Hero() {
 
           {/* Podnadpis */}
           <p className="text-[15px] text-[var(--muted)] leading-relaxed mb-12 font-light">
-            Vědomá práce na sobě a fyzická pohoda. Propojím tě s metodou&nbsp;JIH®
-            a ukážu ti, jak mít energii v těle a klid v mysli — každý den.
+            Autorka metody&nbsp;JIH®. Provázím ženy na půlroční cestě osobního
+            vedení — kus cesty vedle tebe, k tomu, kolik života v tobě ještě
+            čeká.
           </p>
 
           {/* CTA */}
           <div className="flex flex-col sm:flex-row gap-4">
             <a
-              href="#metoda-jih"
+              href="#osobni-vedeni"
               className="inline-block px-10 py-4 bg-[var(--gold)] text-white text-[10px] tracking-[0.3em] uppercase font-medium hover:bg-[var(--gold-dark)] transition-colors duration-300 text-center"
             >
-              Zjistit více
+              Osobní vedení
             </a>
             <a
               href="#kontakt"
               className="inline-block px-10 py-4 border border-[var(--cream-dark)] text-[var(--foreground)] text-[10px] tracking-[0.3em] uppercase font-medium hover:border-[var(--gold)] hover:text-[var(--gold)] transition-all duration-300 text-center"
             >
-              Kontaktovat
+              Napiš mi
             </a>
           </div>
 

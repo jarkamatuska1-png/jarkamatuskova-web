@@ -1,11 +1,11 @@
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
-import Services from "@/components/Services";
 import About from "@/components/About";
+import Method from "@/components/Method";
+import HelenaBridge from "@/components/HelenaBridge";
+import OsobniVedeni from "@/components/OsobniVedeni";
 import Testimonials from "@/components/Testimonials";
 import Blog from "@/components/Blog";
-import Method from "@/components/Method";
-import Products from "@/components/Products";
 import Closing from "@/components/Closing";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
@@ -16,8 +16,9 @@ const jsonLd = {
   name: "Jarka Matušková",
   url: "https://jarkamatuskova.cz",
   image: "https://jarkamatuskova.cz/images/jarka-foto.png",
-  description: "Průvodkyně vědomým životem, autorka metody JIH®. Pomáhám lidem napřímit všechny oblasti jejich života — vztahy, zdraví, byznys, hojnost.",
-  jobTitle: "Průvodkyně vědomým životem",
+  description:
+    "Autorka metody JIH®. Provázím ženy na půlroční cestě osobního vedení — kus cesty vedle nich, k tomu, kolik života v nich ještě čeká.",
+  jobTitle: "Autorka metody JIH®",
   telephone: "+420774420251",
   email: "matuskova@freli.cz",
   address: {
@@ -45,12 +46,12 @@ export default function Home() {
       <Nav />
       <main>
         <Hero />
-        <Services />
         <About />
+        <Method />
+        <HelenaBridge />
+        <OsobniVedeni />
         <Testimonials />
         <Blog />
-        <Method />
-        <Products />
         <Closing />
         <Contact />
       </main>

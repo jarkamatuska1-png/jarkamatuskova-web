@@ -19,17 +19,17 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Jarka Matušková | Průvodkyně vědomým životem",
+  title: "Jarka Matušková | Autorka metody JIH®",
   description:
-    "Vědomá práce na sobě a fyzická pohoda. Propojím tě s metodou JIH® a ukážu ti, jak mít energii v těle a klid v mysli — každý den.",
-  keywords: ["metoda JIH", "osobní rozvoj", "vědomý život", "koučování", "Jarka Matušková"],
+    "Autorka metody JIH®. Provázím ženy na půlroční cestě osobního vedení — kus cesty vedle tebe, k tomu, kolik života v tobě ještě čeká.",
+  keywords: ["metoda JIH", "osobní vedení", "Jarka Matušková"],
   metadataBase: new URL("https://jarkamatuskova.cz"),
   other: {
     "facebook-domain-verification": "lh02ci5zn1uqauv45qzkv01jfhurhs",
   },
   openGraph: {
-    title: "Jarka Matušková | Průvodkyně vědomým životem",
-    description: "Tvůj život. Naplno. Teď.",
+    title: "Jarka Matušková | Autorka metody JIH®",
+    description: "Kus cesty vedle tebe. Doopravdy.",
     url: "https://jarkamatuskova.cz",
     siteName: "Jarka Matušková",
     locale: "cs_CZ",
@@ -39,14 +39,14 @@ export const metadata: Metadata = {
         url: "/opengraph-image.png",
         width: 1200,
         height: 630,
-        alt: "Jarka Matušková | Průvodkyně vědomým životem",
+        alt: "Jarka Matušková | Autorka metody JIH®",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Jarka Matušková | Průvodkyně vědomým životem",
-    description: "Tvůj život. Naplno. Teď.",
+    title: "Jarka Matušková | Autorka metody JIH®",
+    description: "Kus cesty vedle tebe. Doopravdy.",
     images: ["/opengraph-image.png"],
   },
 };

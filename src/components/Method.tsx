@@ -3,21 +3,21 @@ import Link from "next/link";
 const pillars = [
   {
     number: "01",
-    title: "Vnitřní prostor",
+    title: "Návrat k sobě",
     description:
-      "Místo setkávání s vnitřním Bohem. Propojení s tím, co je v tobě nejhlubší a nejsilnější.",
+      "Zastavit se a znovu slyšet vlastní hlas pod tím vším, co se přes něj za ta léta navrstvilo.",
   },
   {
     number: "02",
-    title: "Vědomé tvoření",
+    title: "Vědomé kroky",
     description:
-      "Vědomé tvoření vlastní reality. Naučíš se pracovat s energií, postoji a myšlenkami tak, aby tvořily život, který chceš.",
+      "Učíš se všímat si vlastních postojů a myšlenek a dělat malá rozhodnutí z pravdy, ne ze zvyku a sevření.",
   },
   {
     number: "03",
-    title: "Životní styl",
+    title: "Cesta, ne zásah",
     description:
-      "Životní styl, nikoli jednorázový zásah. JIH® je cesta, ne rychlé řešení — a proto přináší trvalé výsledky.",
+      "JIH® není rychlé řešení ani jednorázový zážitek. Je to způsob, jak jít životem — a proto dává čas, ne sliby.",
   },
 ];
 
@@ -33,10 +33,9 @@ export default function Method() {
             Co je <span className="text-[var(--gold)]">JIH®</span>
           </h2>
           <p className="text-lg text-[var(--muted)] max-w-2xl mx-auto leading-relaxed font-light">
-            JIH® tě navrací k nejlepší verzi tvého života. Vědomě a jednoduše
-            pracuješ s vlastní energií, postoji a myšlenkami. Zdraví, vztahy,
-            finance, hojnost, pocit vlastní hodnoty. Vše najednou. Vše
-            propojené.
+            Metoda JIH® je můj způsob, jak provázet ženu zpátky k sobě. Vědomě a
+            beze spěchu si všímáš vlastních postojů a myšlenek a učíš se žít
+            z pravdy místo ze sevření. Ne rychlá změna — cesta, která má čas.
           </p>
         </div>
 
@@ -63,11 +62,15 @@ export default function Method() {
 
         <div className="text-center">
           <Link
-            href="/sluzby/metoda-jih"
+            href="/#osobni-vedeni"
             className="inline-block px-10 py-4 border border-[var(--gold)] text-[var(--gold)] text-xs tracking-[0.25em] uppercase font-medium hover:bg-[var(--gold)] hover:text-white transition-all duration-300"
           >
-            Začít s metodou JIH®
+            Poznat osobní vedení
           </Link>
+          <p className="text-[var(--muted)] text-xs font-light max-w-xl mx-auto mt-10 leading-relaxed">
+            Interní certifikace JIH® není zdravotní služba ani státní odborná
+            kvalifikace.
+          </p>
         </div>
       </div>
     </section>

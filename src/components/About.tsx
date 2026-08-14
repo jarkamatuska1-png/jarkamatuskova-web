@@ -19,18 +19,18 @@ export default function About() {
             </h2>
             <div className="space-y-5 text-[var(--muted)] leading-relaxed font-light text-[15px] max-w-xl">
               <p>
-                Jsem průvodkyně vědomým životem. Věřím, že každý člověk má
-                v sobě vše, co potřebuje — a mojí rolí je pomoci ti to
-                objevit a propojit.
+                Jsem autorka metody JIH®. Věřím, že každá žena má v sobě víc
+                života, než si zrovna troufá žít — a mojí rolí je jít kus cesty
+                vedle ní, dokud to znovu neuvidí sama.
               </p>
               <p>
-                Přes metodu JIH® pracuji s lidmi na jejich zdraví, vztazích,
-                financích a pocitu vlastní hodnoty. Ne odděleně — ale jako
-                jeden celek. Protože takový jsme.
+                Nejsem terapeutka ani kouč. Jsem žena, co je jen o kousek
+                napřed a umí druhou provést kusem cesty zpátky k sobě —
+                doopravdy, beze spěchu, bez návodů ke stažení.
               </p>
               <p>
-                Věřím v jednoduchost. Ve vědomé kroky. V to, že změna se
-                nemusí odehrát přes noc — ale každý den, krok za krokem.
+                Věřím v jednoduchost. V malé vědomé kroky. V to, že změna se
+                nemusí odehrát přes noc — ale den za dnem, kousek po kousku.
               </p>
             </div>
           </div>
@@ -54,15 +54,15 @@ export default function About() {
         <div className="border-t border-[var(--cream-dark)] pt-12 grid grid-cols-3 gap-6 text-center max-w-lg">
           <div>
             <p className="font-heading text-3xl font-semibold text-[var(--gold)]">10+</p>
-            <p className="text-[10px] tracking-widest uppercase text-[var(--muted)] mt-2">let zkušeností</p>
+            <p className="text-[10px] tracking-widest uppercase text-[var(--muted)] mt-2">let na cestě</p>
           </div>
           <div>
-            <p className="font-heading text-3xl font-semibold text-[var(--gold)]">500+</p>
-            <p className="text-[10px] tracking-widest uppercase text-[var(--muted)] mt-2">klientů</p>
+            <p className="font-heading text-3xl font-semibold text-[var(--gold)]">6</p>
+            <p className="text-[10px] tracking-widest uppercase text-[var(--muted)] mt-2">měsíců spolu</p>
           </div>
           <div>
             <p className="font-heading text-3xl font-semibold italic text-[var(--gold)]">JIH®</p>
-            <p className="text-[10px] tracking-widest uppercase text-[var(--muted)] mt-2">vlastní metoda</p>
+            <p className="text-[10px] tracking-widest uppercase text-[var(--muted)] mt-2">autorská metoda</p>
           </div>
         </div>
 

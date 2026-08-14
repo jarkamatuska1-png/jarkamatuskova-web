@@ -47,6 +47,17 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  async redirects() {
+    return [
+      // Retirované formáty — trvale přesměrováno na domů (metoda JIH® 2026.1).
+      { source: "/sluzby", destination: "/", permanent: true },
+      { source: "/sluzby/:path*", destination: "/", permanent: true },
+      { source: "/meditace", destination: "/", permanent: true },
+      // Kvíz je dočasně neveřejný — kód zůstává v repu, jen není přístupný.
+      // Až bude dávat smysl, stačí tento řádek odebrat.
+      { source: "/kviz", destination: "/", permanent: false },
+    ];
+  },
 };
 
 export default nextConfig;
