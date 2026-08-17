@@ -47,6 +47,13 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  async rewrites() {
+    return [
+      // Neveřejná tréninková appka (statické HTML v /public).
+      // Rewrite jen proto, aby adresa fungovala i bez /index.html na konci.
+      { source: "/t-jm-9f4b2", destination: "/t-jm-9f4b2/index.html" },
+    ];
+  },
   async redirects() {
     return [
       // Retirované formáty — trvale přesměrováno na domů (metoda JIH® 2026.1).
