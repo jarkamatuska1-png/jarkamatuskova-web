@@ -161,8 +161,8 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
             <Image
               src={post.image}
               alt={post.imageAlt ?? post.title}
-              width={1536}
-              height={1024}
+              width={post.imageWidth ?? 1536}
+              height={post.imageHeight ?? 1024}
               priority
               className="w-full h-auto mb-12"
             />
