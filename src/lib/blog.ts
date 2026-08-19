@@ -13,6 +13,8 @@ export interface Post {
   seoTitle?: string;
   metaDescription?: string;
   image?: string;
+  imageWidth?: number;
+  imageHeight?: number;
   imageAlt?: string;
   ogImage?: string;
   content: string;
@@ -35,6 +37,8 @@ export function getAllPosts(): Post[] {
         seoTitle: data.seoTitle,
         metaDescription: data.metaDescription,
         image: data.image,
+        imageWidth: data.imageWidth,
+        imageHeight: data.imageHeight,
         imageAlt: data.imageAlt,
         ogImage: data.ogImage,
         content,
@@ -57,6 +61,8 @@ export function getPostBySlug(slug: string): Post | undefined {
     seoTitle: data.seoTitle,
     metaDescription: data.metaDescription,
     image: data.image,
+    imageWidth: data.imageWidth,
+    imageHeight: data.imageHeight,
     imageAlt: data.imageAlt,
     ogImage: data.ogImage,
     content,
