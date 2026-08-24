@@ -67,14 +67,13 @@ export default function GdprPage() {
               <li><strong className="text-[var(--foreground)] font-medium">Google Analytics</strong> — statistiky návštěvnosti</li>
               <li><strong className="text-[var(--foreground)] font-medium">Ecomail</strong> — e-mailový marketing</li>
               <li><strong className="text-[var(--foreground)] font-medium">Stripe Payments Europe</strong> — platební brána</li>
-              <li><strong className="text-[var(--foreground)] font-medium">Meta (Facebook)</strong> — remarketing</li>
             </ul>
 
             <h2 className="font-heading text-2xl font-semibold text-[var(--foreground)] pt-6">Vaše práva</h2>
             <p>V rámci GDPR máte právo na přístup ke svým osobním údajům, jejich opravu nebo výmaz, omezení zpracování, přenositelnost údajů a právo vznést námitku. Svá práva můžete uplatnit na e-mailu <a href="mailto:matuskova@freli.cz" className="text-[var(--gold)] hover:text-[var(--gold-dark)]">matuskova@freli.cz</a>.</p>
 
             <h2 className="font-heading text-2xl font-semibold text-[var(--foreground)] pt-6">Cookies</h2>
-            <p>Naše stránky používají soubory cookies pro analýzu návštěvnosti (Google Analytics) a remarketing (Facebook). Informace shromážděné pomocí cookies nám neumožňují identifikovat vaše jméno ani kontaktní údaje, pokud se nám je sami neposkytnete. Cookies můžete vypnout v nastavení prohlížeče.</p>
+            <p>Naše stránky používají soubory cookies pro analýzu návštěvnosti (Google Analytics). Informace shromážděné pomocí cookies nám neumožňují identifikovat vaše jméno ani kontaktní údaje, pokud se nám je sami neposkytnete. Cookies můžete vypnout v nastavení prohlížeče.</p>
 
             <h2 className="font-heading text-2xl font-semibold text-[var(--foreground)] pt-6">Zabezpečení</h2>
             <p>Vaše osobní údaje chráníme v maximální možné míře pomocí moderních technologií. Přijali jsme a udržujeme veškerá možná technická a organizační opatření, která zamezují zneužití, poškození nebo zničení vašich osobních údajů.</p>
