@@ -29,7 +29,7 @@ export default function CookieConsent() {
     <div className="fixed bottom-0 left-0 right-0 z-50 bg-[var(--foreground)] border-t border-white/10">
       <div className="max-w-6xl mx-auto px-6 py-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <p className="text-xs text-white/60 font-light leading-relaxed max-w-2xl">
-          Tento web používá cookies pro analýzu návštěvnosti a lepší cílení reklamy.{" "}
+          Tento web používá cookies pro analýzu návštěvnosti.{" "}
           <Link href="/gdpr" className="text-[var(--gold-light)] hover:text-[var(--gold)] underline underline-offset-2 transition-colors">
             Více informací
           </Link>
