@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import KvizClient from "./KvizClient";
 
-const PAGE_URL = "https://jarkamatuskova.cz/kviz";
+const PAGE_URL = "https://www.jarkamatuskova.cz/kviz";
 
 export const metadata: Metadata = {
   title: "Žiješ ze sebe, nebo z tlaku na sebe? | Jarka Matušková",

@@ -6,11 +6,11 @@ export const metadata = {
   title: "Podcasty | Jarka Matušková",
   description: "Poslouchej podcasty Jarky Matuškové o vědomém životě, metodě JIH® a osobním rozvoji. Dostupné na Spotify a Apple Podcasts.",
   keywords: ["podcast", "Jarka Matušková", "vědomý život", "metoda JIH", "osobní rozvoj", "Spotify", "inspirace"],
-  alternates: { canonical: "https://jarkamatuskova.cz/podcasty" },
+  alternates: { canonical: "https://www.jarkamatuskova.cz/podcasty" },
   openGraph: {
     title: "Podcasty | Jarka Matušková",
     description: "Inspirace do uší — o vědomém životě, metodě JIH® a osobním rozvoji.",
-    url: "https://jarkamatuskova.cz/podcasty",
+    url: "https://www.jarkamatuskova.cz/podcasty",
     siteName: "Jarka Matušková",
     locale: "cs_CZ",
     type: "website",
