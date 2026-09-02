@@ -8,11 +8,11 @@ export const metadata: Metadata = {
   title: "Blog | Jarka Matušková",
   description: "Inspirace, články a myšlenky o vědomém životě, metodě JIH® a osobním rozvoji. Čti pravidelně — pro energii, klid a návrat k sobě.",
   keywords: ["blog", "vědomý život", "metoda JIH", "osobní rozvoj", "Jarka Matušková", "inspirace", "emoce", "energie"],
-  alternates: { canonical: "https://jarkamatuskova.cz/blog" },
+  alternates: { canonical: "https://www.jarkamatuskova.cz/blog" },
   openGraph: {
     title: "Blog | Jarka Matušková",
     description: "Inspirace, články a myšlenky o vědomém životě, metodě JIH® a osobním rozvoji.",
-    url: "https://jarkamatuskova.cz/blog",
+    url: "https://www.jarkamatuskova.cz/blog",
     siteName: "Jarka Matušková",
     locale: "cs_CZ",
     type: "website",

@@ -1,6 +1,6 @@
 "use client";
 
-const BASE_URL = "https://jarkamatuskova.cz";
+const BASE_URL = "https://www.jarkamatuskova.cz";
 
 export default function ShareButtons({ slug, title }: { slug: string; title: string }) {
   const url = `${BASE_URL}/blog/${slug}`;

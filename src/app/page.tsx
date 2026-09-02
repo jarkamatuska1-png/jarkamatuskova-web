@@ -14,8 +14,8 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Jarka Matušková",
-  url: "https://jarkamatuskova.cz",
-  image: "https://jarkamatuskova.cz/images/jarka-foto.png",
+  url: "https://www.jarkamatuskova.cz",
+  image: "https://www.jarkamatuskova.cz/images/jarka-foto.png",
   description:
     "Autorka metody JIH®. Provázím ženy na půlroční cestě osobního vedení — kus cesty vedle nich, k tomu, kolik života v nich ještě čeká.",
   jobTitle: "Autorka metody JIH®",

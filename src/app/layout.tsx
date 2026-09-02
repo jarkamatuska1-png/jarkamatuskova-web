@@ -23,14 +23,14 @@ export const metadata: Metadata = {
   description:
     "Autorka metody JIH®. Provázím ženy na půlroční cestě osobního vedení — kus cesty vedle tebe, k tomu, kolik života v tobě ještě čeká.",
   keywords: ["metoda JIH", "osobní vedení", "Jarka Matušková"],
-  metadataBase: new URL("https://jarkamatuskova.cz"),
+  metadataBase: new URL("https://www.jarkamatuskova.cz"),
   other: {
     "facebook-domain-verification": "lh02ci5zn1uqauv45qzkv01jfhurhs",
   },
   openGraph: {
     title: "Jarka Matušková | Autorka metody JIH®",
     description: "Kus cesty vedle tebe. Doopravdy.",
-    url: "https://jarkamatuskova.cz",
+    url: "https://www.jarkamatuskova.cz",
     siteName: "Jarka Matušková",
     locale: "cs_CZ",
     type: "website",

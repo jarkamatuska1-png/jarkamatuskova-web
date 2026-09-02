@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://jarkamatuskova.cz/sitemap.xml",
+    sitemap: "https://www.jarkamatuskova.cz/sitemap.xml",
   };
 }

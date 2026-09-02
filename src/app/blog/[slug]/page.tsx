@@ -46,7 +46,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const post = getPostBySlug(slug);
   if (!post) return {};
-  const url = `https://jarkamatuskova.cz/blog/${slug}`;
+  const url = `https://www.jarkamatuskova.cz/blog/${slug}`;
   const metadataTitle = post.seoTitle ?? post.title;
   const metadataDescription = post.metaDescription ?? post.excerpt;
   const metadataImage = post.ogImage ?? "/opengraph-image.png";
@@ -85,7 +85,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
   const post = getPostBySlug(slug);
   if (!post) notFound();
 
-  const postUrl = `https://jarkamatuskova.cz/blog/${slug}`;
+  const postUrl = `https://www.jarkamatuskova.cz/blog/${slug}`;
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
@@ -94,23 +94,23 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
     url: postUrl,
     datePublished: post.date,
     inLanguage: "cs",
-    ...(post.image ? { image: `https://jarkamatuskova.cz${post.image}` } : {}),
+    ...(post.image ? { image: `https://www.jarkamatuskova.cz${post.image}` } : {}),
     author: {
       "@type": "Person",
       name: "Jarka Matušková",
-      url: "https://jarkamatuskova.cz",
+      url: "https://www.jarkamatuskova.cz",
     },
     publisher: {
       "@type": "Person",
       name: "Jarka Matušková",
-      url: "https://jarkamatuskova.cz",
+      url: "https://www.jarkamatuskova.cz",
     },
     mainEntityOfPage: { "@type": "WebPage", "@id": postUrl },
     breadcrumb: {
       "@type": "BreadcrumbList",
       itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Domů", item: "https://jarkamatuskova.cz" },
-        { "@type": "ListItem", position: 2, name: "Blog", item: "https://jarkamatuskova.cz/blog" },
+        { "@type": "ListItem", position: 1, name: "Domů", item: "https://www.jarkamatuskova.cz" },
+        { "@type": "ListItem", position: 2, name: "Blog", item: "https://www.jarkamatuskova.cz/blog" },
         { "@type": "ListItem", position: 3, name: post.title, item: postUrl },
       ],
     },
