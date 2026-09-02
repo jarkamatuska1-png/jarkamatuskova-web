@@ -8,7 +8,7 @@ import ShareButtons from "@/components/ShareButtons";
 import type { ReactNode } from "react";
 
 function renderInlineMarkdown(text: string): ReactNode[] {
-  const tokenPattern = /(\*\*[^*]+\*\*|\*[^*]+\*|\[[^\]]+\]\(https?:\/\/[^)]+\))/g;
+  const tokenPattern = /(\*\*[^*]+\*\*|\*[^*]+\*|\[[^\]]+\]\((?:https?:\/\/|\/)[^)]+\))/g;
 
   return text.split(tokenPattern).map((part, index) => {
     if (part.startsWith("**") && part.endsWith("**")) {
@@ -17,6 +17,20 @@ function renderInlineMarkdown(text: string): ReactNode[] {
 
     if (part.startsWith("*") && part.endsWith("*")) {
       return <em key={index}>{part.slice(1, -1)}</em>;
+    }
+
+    const internalMatch = part.match(/^\[([^\]]+)\]\((\/[^)]+)\)$/);
+    if (internalMatch) {
+      // Odkaz uvnitř webu — stejné okno, ať čtenářku nevyhodí z rozečteného článku.
+      return (
+        <Link
+          key={index}
+          href={internalMatch[2]}
+          className="text-[var(--gold)] underline underline-offset-4 hover:text-[var(--gold-dark)]"
+        >
+          {internalMatch[1]}
+        </Link>
+      );
     }
 
     const linkMatch = part.match(/^\[([^\]]+)\]\((https?:\/\/[^)]+)\)$/);
@@ -93,6 +107,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
     description: post.metaDescription ?? post.excerpt,
     url: postUrl,
     datePublished: post.date,
+    dateModified: post.updated ?? post.date,
     inLanguage: "cs",
     ...(post.image ? { image: `https://www.jarkamatuskova.cz${post.image}` } : {}),
     author: {
