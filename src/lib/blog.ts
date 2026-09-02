@@ -8,6 +8,7 @@ export interface Post {
   slug: string;
   title: string;
   date: string;
+  updated?: string;
   excerpt: string;
   lead?: string;
   seoTitle?: string;
@@ -32,6 +33,7 @@ export function getAllPosts(): Post[] {
         slug,
         title: data.title ?? "",
         date: data.date ?? "",
+        updated: data.updated,
         excerpt: data.excerpt ?? "",
         lead: data.lead,
         seoTitle: data.seoTitle,
@@ -56,6 +58,7 @@ export function getPostBySlug(slug: string): Post | undefined {
     slug,
     title: data.title ?? "",
     date: data.date ?? "",
+    updated: data.updated,
     excerpt: data.excerpt ?? "",
     lead: data.lead,
     seoTitle: data.seoTitle,
