@@ -1,4 +1,4 @@
-import { getPostBySlug, getAllPosts, formatDate, pribuzneClanky, temaPodleSlugu } from "@/lib/blog";
+import { getPostBySlug, getAllPosts, formatDate, pribuzneClanky, temaPodleSlugu, ogImageTematu } from "@/lib/blog";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Link from "next/link";
@@ -64,7 +64,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const url = `https://www.jarkamatuskova.cz/blog/${slug}`;
   const metadataTitle = post.seoTitle ?? post.title;
   const metadataDescription = post.metaDescription ?? post.excerpt;
-  const metadataImage = post.ogImage ?? "/opengraph-image";
+  // Vlastní náhled → náhled tématu → sdílený náhled webu.
+  const metadataImage = post.ogImage ?? ogImageTematu(post.tema) ?? "/opengraph-image";
+  const jeVlastni = Boolean(post.ogImage ?? ogImageTematu(post.tema));
   return {
     title: `${metadataTitle} | Jarka Matušková`,
     description: metadataDescription,
@@ -82,7 +84,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       images: [{
         url: metadataImage,
         width: 1200,
-        height: post.ogImage ? 628 : 630,
+        height: jeVlastni ? 628 : 630,
         alt: post.imageAlt ?? post.title,
       }],
     },
