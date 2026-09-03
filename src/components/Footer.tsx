@@ -8,7 +8,9 @@ export default function Footer() {
           <p className="font-heading text-base font-semibold tracking-[0.15em] uppercase text-[var(--gold)]">
             Jarka Matušková
           </p>
-          <div className="flex gap-8 text-xs tracking-[0.2em] uppercase">
+          {/* Na mobilu se čtyři odkazy vedle sebe nevešly a celý web se dal
+              posunout do strany o 13 px. Proto se teď zalamují a mezera je menší. */}
+          <div className="flex flex-wrap justify-center gap-x-6 gap-y-3 text-xs tracking-[0.2em] uppercase">
             {[
               { label: "Facebook", href: "https://www.facebook.com/jarka.matuskova" },
               { label: "Instagram", href: "https://www.instagram.com/j_matuskova/" },
