@@ -205,17 +205,46 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
           {/* Content */}
           <article className="space-y-5 text-[var(--muted)] leading-relaxed font-light text-[1.05rem]">
             {paragraphs.map((para, i) => {
-              if (para.startsWith("## ")) {
+              // Nadpisy. ⚠️ Do 3. 9. 2026 se poznaly jen „## " a „# ", takže
+              // 273 nadpisů ve 44 článcích psaných jako „### " a „#### " se
+              // vykreslilo jako obyčejný odstavec — včetně křížků. Proto se
+              // úrovně řeší jedním rozborem a od nejdelší předpony.
+              const nadpis = para.match(/^(#{1,4})(?:[ \t]+([\s\S]*))?$/);
+              if (nadpis) {
+                const uroven = nadpis[1].length;
+                const text = (nadpis[2] ?? "").trim();
+                // Prázdný nadpis (jen křížky) se zahodí — v textech se pár takových našlo.
+                if (!text) return null;
+                if (uroven >= 4) {
+                  return (
+                    <p
+                      key={i}
+                      className="text-xs tracking-[0.25em] uppercase text-[var(--gold)] pt-6"
+                    >
+                      {renderInlineMarkdown(text)}
+                    </p>
+                  );
+                }
+                if (uroven === 3) {
+                  return (
+                    <h3
+                      key={i}
+                      className="font-heading text-xl font-semibold text-[var(--foreground)] pt-3"
+                    >
+                      {renderInlineMarkdown(text)}
+                    </h3>
+                  );
+                }
                 return (
-                  <h2 key={i} className="font-heading text-2xl font-semibold text-[var(--foreground)] pt-4">
-                    {renderInlineMarkdown(para.replace("## ", ""))}
-                  </h2>
-                );
-              }
-              if (para.startsWith("# ")) {
-                return (
-                  <h2 key={i} className="font-heading text-3xl font-semibold text-[var(--foreground)] pt-4">
-                    {renderInlineMarkdown(para.replace("# ", ""))}
+                  <h2
+                    key={i}
+                    className={
+                      uroven === 1
+                        ? "font-heading text-3xl font-semibold text-[var(--foreground)] pt-4"
+                        : "font-heading text-2xl font-semibold text-[var(--foreground)] pt-4"
+                    }
+                  >
+                    {renderInlineMarkdown(text)}
                   </h2>
                 );
               }
