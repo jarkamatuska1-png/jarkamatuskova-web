@@ -1,4 +1,4 @@
-import { getAllPosts, getPostBySlug, formatDate } from "@/lib/blog";
+import { getPostBySlug, getAllPosts, formatDate, pribuzneClanky, temaPodleSlugu } from "@/lib/blog";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Link from "next/link";
@@ -132,10 +132,10 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
     },
   };
 
-  const allPosts = getAllPosts();
-  const relatedPosts = allPosts
-    .filter((p) => p.slug !== slug)
-    .slice(0, 3);
+  // Do 3. 9. 2026 se tu ukazovaly tři NEJNOVĚJŠÍ články bez ohledu na téma.
+  // Teď se berou ze stejného tématu — příbuznost místo náhody.
+  const relatedPosts = pribuzneClanky(slug, 3);
+  const tema = post.tema ? temaPodleSlugu(post.tema) : undefined;
 
   const paragraphs = post.content
     .split(/\n{2,}/)
@@ -162,6 +162,17 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
           {/* Header */}
           <p className="text-xs tracking-[0.3em] uppercase text-[var(--gold)] mb-5">
             {formatDate(post.date)}
+            {tema && (
+              <>
+                {" · "}
+                <Link
+                  href={`/blog/tema/${tema.slug}`}
+                  className="hover:text-[var(--gold-dark)] underline underline-offset-4"
+                >
+                  {tema.nazev}
+                </Link>
+              </>
+            )}
           </p>
           <h1 className="font-heading text-4xl md:text-5xl font-semibold text-[var(--foreground)] leading-tight mb-10">
             {post.title}
@@ -239,7 +250,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
           {/* Related posts */}
           {relatedPosts.length > 0 && (
             <div className="mt-16">
-              <p className="text-xs tracking-[0.3em] uppercase text-[var(--gold)] mb-8">Další články</p>
+              <p className="text-xs tracking-[0.3em] uppercase text-[var(--gold)] mb-8">{tema ? `Další z tématu ${tema.nazev.toLowerCase()}` : "Další články"}</p>
               <div className="grid md:grid-cols-3 gap-6">
                 {relatedPosts.map((related) => (
                   <Link
