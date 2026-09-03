@@ -4,6 +4,9 @@ import "./globals.css";
 import CookieConsent from "@/components/CookieConsent";
 import Analytics from "@/components/Analytics";
 import WhatsAppButton from "@/components/WhatsAppButton";
+// Měření od Vercelu — bez cookies, takže měří VŠECHNY návštěvnice.
+// Google Analytics vedle toho měří jen ty, které přijmou cookies.
+import { Analytics as VercelAnalytics } from "@vercel/analytics/next";
 
 const dmSans = DM_Sans({
   variable: "--font-dm-sans",
@@ -66,6 +69,7 @@ export default function RootLayout({
         <WhatsAppButton />
         <CookieConsent />
         <Analytics />
+        <VercelAnalytics />
       </body>
     </html>
   );
