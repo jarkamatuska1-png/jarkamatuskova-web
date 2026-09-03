@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/opengraph-image.png",
+        url: "/opengraph-image",
         width: 1200,
         height: 630,
         alt: "Jarka Matušková | Autorka metody JIH®",
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Jarka Matušková | Autorka metody JIH®",
     description: "Kus cesty vedle tebe. Doopravdy.",
-    images: ["/opengraph-image.png"],
+    images: ["/opengraph-image"],
   },
 };
 

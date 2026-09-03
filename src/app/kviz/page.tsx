@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/opengraph-image.png",
+        url: "/opengraph-image",
         width: 1200,
         height: 630,
         alt: "Žiješ ze sebe, nebo z tlaku na sebe? | Jarka Matušková",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Žiješ ze sebe, nebo z tlaku na sebe?",
     description: "Krátký kvíz-zrcadlo pro ženy 45+.",
-    images: ["/opengraph-image.png"],
+    images: ["/opengraph-image"],
   },
 };
 
