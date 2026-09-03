@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import ShareButtons from "@/components/ShareButtons";
+import ClanekOdber from "@/components/ClanekOdber";
 import type { ReactNode } from "react";
 
 function renderInlineMarkdown(text: string): ReactNode[] {
@@ -230,6 +231,10 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
           <div className="mt-16 pt-10 border-t border-[var(--cream-dark)]">
             <ShareButtons slug={slug} title={post.title} />
           </div>
+
+          {/* Sběr e-mailu — do 3. 9. 2026 tu nebyl. Článek končil podpisem
+              a žena, kterou text zasáhl, neměla kde nechat adresu. */}
+          <ClanekOdber slug={slug} />
 
           {/* Related posts */}
           {relatedPosts.length > 0 && (
