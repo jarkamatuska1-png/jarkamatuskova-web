@@ -9,7 +9,9 @@ export async function POST(req: NextRequest) {
   const email = cleanText(guarded.body.email, 254);
   const message = cleanText(guarded.body.message, 5000);
 
-  if (!name || !message) {
+  // Jméno je nepovinné. Pod články se ptáme jen na e-mail — každé pole navíc
+  // je důvod odejít, a oslovení jménem se v Jarčiných dopisech stejně nepoužívá.
+  if (!message) {
     return NextResponse.json({ error: "Chybí povinná pole." }, { status: 400 });
   }
   if (!isValidEmail(email)) {
