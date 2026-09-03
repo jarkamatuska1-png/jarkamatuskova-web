@@ -85,7 +85,13 @@ export function formatDate(dateStr: string): string {
 }
 
 /** Témata blogu. Pořadí určuje, jak se vypisují — nejnosnější první. */
-export const TEMATA: { slug: string; nazev: string; popis: string }[] = [
+export const TEMATA: {
+  slug: string;
+  nazev: string;
+  popis: string;
+  /** Náhled při sdílení, 1200×628. Když chybí, použije se sdílený náhled webu. */
+  ogImage?: string;
+}[] = [
   {
     slug: "prestat-se-obetovat",
     nazev: "Přestat se obětovat",
@@ -100,12 +106,14 @@ export const TEMATA: { slug: string; nazev: string; popis: string }[] = [
   },
   {
     slug: "mysleni-a-energie",
+    ogImage: "/images/tema-mysleni-a-energie-og.jpg",
     nazev: "Myšlení, energie a přítomnost",
     popis:
       "Myšlenky, emoce, zákon přitažlivosti a přítomný okamžik. O tom, co si člověk tvoří sám, i když o tom neví.",
   },
   {
     slug: "metoda-jih",
+    ogImage: "/images/tema-metoda-jih-og.jpg",
     nazev: "Metoda JIH®",
     popis:
       "Odkud se metoda JIH® vzala, jak se s ní pracuje a co s ní jde odhalit. Napsané autorkou, ne z brožury.",
@@ -118,6 +126,7 @@ export const TEMATA: { slug: string; nazev: string; popis: string }[] = [
   },
   {
     slug: "padesatka-a-svoboda",
+    ogImage: "/images/tema-padesatka-a-svoboda-og.jpg",
     nazev: "Padesátka a svoboda",
     popis:
       "Padesát a dál. O svobodě, která přichází, když děti dospějí — a o tom, proč je stáří tak nechtěné.",
@@ -153,4 +162,10 @@ export function pribuzneClanky(slug: string, kolik = 3): Post[] {
     (p) => p.slug !== slug && !ze_tematu.some((z) => z.slug === p.slug),
   );
   return [...ze_tematu, ...doplnek].slice(0, kolik);
+}
+
+/** Náhled tématu pro sdílení. Vrátí undefined, když téma svůj obrázek nemá. */
+export function ogImageTematu(temaSlug?: string): string | undefined {
+  if (!temaSlug) return undefined;
+  return TEMATA.find((t) => t.slug === temaSlug)?.ogImage;
 }
