@@ -1,4 +1,4 @@
-import { getAllPosts, formatDate } from "@/lib/blog";
+import { getAllPosts, formatDate, TEMATA } from "@/lib/blog";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Link from "next/link";
@@ -39,6 +39,25 @@ export default function BlogPage() {
             <h1 className="font-heading text-5xl md:text-6xl font-semibold text-[var(--foreground)]">
               Inspirace a <span className="text-[var(--gold)] italic">články</span>
             </h1>
+          </div>
+
+          {/* Témata — do 3. 9. 2026 se tu sypalo všech 102 článků do jednoho
+              seznamu bez rozdělení. Pro čtenářku hromada, pro Google taky. */}
+          <div className="mb-20 pb-14 border-b border-[var(--cream-dark)]">
+            <p className="text-xs tracking-[0.3em] uppercase text-[var(--gold)] mb-8">
+              Podle tématu
+            </p>
+            <div className="flex flex-wrap gap-x-8 gap-y-4">
+              {TEMATA.map((t) => (
+                <Link
+                  key={t.slug}
+                  href={`/blog/tema/${t.slug}`}
+                  className="text-[var(--foreground)] font-light hover:text-[var(--gold)] transition-colors border-b border-[var(--cream-dark)] hover:border-[var(--gold)] pb-0.5"
+                >
+                  {t.nazev}
+                </Link>
+              ))}
+            </div>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-14">
