@@ -63,7 +63,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const url = `https://www.jarkamatuskova.cz/blog/${slug}`;
   const metadataTitle = post.seoTitle ?? post.title;
   const metadataDescription = post.metaDescription ?? post.excerpt;
-  const metadataImage = post.ogImage ?? "/opengraph-image.png";
+  const metadataImage = post.ogImage ?? "/opengraph-image";
   return {
     title: `${metadataTitle} | Jarka Matušková`,
     description: metadataDescription,

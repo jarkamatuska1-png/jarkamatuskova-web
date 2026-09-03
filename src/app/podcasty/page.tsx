@@ -14,13 +14,13 @@ export const metadata = {
     siteName: "Jarka Matušková",
     locale: "cs_CZ",
     type: "website",
-    images: [{ url: "/opengraph-image.png", width: 1200, height: 630, alt: "Podcasty | Jarka Matušková" }],
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Podcasty | Jarka Matušková" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Podcasty | Jarka Matušková",
     description: "Inspirace do uší — vědomý život, metoda JIH® a osobní rozvoj.",
-    images: ["/opengraph-image.png"],
+    images: ["/opengraph-image"],
   },
 };
 
