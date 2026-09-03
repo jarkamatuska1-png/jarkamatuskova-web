@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Zdrojové fotky ke zpracování — do repa nepatří, hotové náhledy jsou v public/images
+me foto/

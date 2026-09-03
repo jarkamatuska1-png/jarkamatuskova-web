@@ -94,12 +94,14 @@ export const TEMATA: {
 }[] = [
   {
     slug: "prestat-se-obetovat",
+    ogImage: "/images/tema-prestat-se-obetovat-og.jpg",
     nazev: "Přestat se obětovat",
     popis:
       "O ženách, které všechno zvládnou — a o ceně, kterou za to platí. Proč se z laskavosti stane povinnost a jak z toho jde vystoupit.",
   },
   {
     slug: "vztahy",
+    ogImage: "/images/tema-vztahy-og.jpg",
     nazev: "Vztahy a rodina",
     popis:
       "Manžel, děti, rodiče. O dlouhých vztazích, o tom, co v nich vydrží, a o tom, co se v nich dá změnit i po letech.",
@@ -120,6 +122,7 @@ export const TEMATA: {
   },
   {
     slug: "byznys-a-duchovni-cesta",
+    ogImage: "/images/tema-byznys-a-duchovni-cesta-og.jpg",
     nazev: "Byznys a duchovní cesta",
     popis:
       "Jde dohromady pracovní úspěch a duchovní cesta? O podnikání, o vlastní cestě a o díře, kterou nezaplní ani úspěch.",
