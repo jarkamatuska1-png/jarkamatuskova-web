@@ -12,7 +12,11 @@ const contentSecurityPolicy = [
   "style-src 'self' 'unsafe-inline' https://assets.calendly.com",
   "img-src 'self' data: blob: https:",
   "font-src 'self' data:",
-  "connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://stats.g.doubleclick.net https://connect.facebook.net https://www.facebook.com",
+  // ⚠️ GA4 neodesílá na region1.google-analytics.com, ale na
+  // region1.ANALYTICS.google.com — jiná doména. Do 3. 9. 2026 tu byla jen ta
+  // první, takže CSP všechna měření zahazovala a Analytics neměly ani jeden
+  // záznam. Proto jsou tu zástupné znaky pro obě rodiny domén.
+  "connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://stats.g.doubleclick.net https://connect.facebook.net https://www.facebook.com",
   "frame-src https://calendly.com https://www.facebook.com",
   "frame-ancestors 'self'",
   "base-uri 'self'",
