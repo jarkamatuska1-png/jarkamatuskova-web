@@ -1,4 +1,5 @@
 import { getAllPosts, formatDate, TEMATA } from "@/lib/blog";
+import BlogHledani from "@/components/BlogHledani";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Link from "next/link";
@@ -41,43 +42,19 @@ export default function BlogPage() {
             </h1>
           </div>
 
-          {/* Témata — do 3. 9. 2026 se tu sypalo všech 102 článků do jednoho
-              seznamu bez rozdělení. Pro čtenářku hromada, pro Google taky. */}
-          <div className="mb-20 pb-14 border-b border-[var(--cream-dark)]">
-            <p className="text-xs tracking-[0.3em] uppercase text-[var(--gold)] mb-8">
-              Podle tématu
-            </p>
-            <div className="flex flex-wrap gap-x-8 gap-y-4">
-              {TEMATA.map((t) => (
-                <Link
-                  key={t.slug}
-                  href={`/blog/tema/${t.slug}`}
-                  className="text-[var(--foreground)] font-light hover:text-[var(--gold)] transition-colors border-b border-[var(--cream-dark)] hover:border-[var(--gold)] pb-0.5"
-                >
-                  {t.nazev}
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-14">
-            {posts.map((post) => (
-              <Link key={post.slug} href={`/blog/${post.slug}`} className="group block">
-                <p className="text-xs tracking-[0.25em] uppercase text-[var(--gold)] mb-3">
-                  {formatDate(post.date)}
-                </p>
-                <h2 className="font-heading text-xl font-semibold text-[var(--foreground)] mb-3 group-hover:text-[var(--gold)] transition-colors duration-200 leading-snug">
-                  {post.title}
-                </h2>
-                <p className="text-[var(--muted)] text-sm leading-relaxed font-light line-clamp-3">
-                  {post.excerpt}
-                </p>
-                <span className="inline-block mt-4 text-xs tracking-[0.2em] uppercase text-[var(--gold)] border-b border-[var(--gold)] pb-0.5 group-hover:text-[var(--gold-dark)] group-hover:border-[var(--gold-dark)] transition-colors">
-                  Číst dál →
-                </span>
-              </Link>
-            ))}
-          </div>
+          {/* Hledání + témata + výpis. Klientská část — do 3. 9. 2026 se tu
+              sypalo všech 102 článků do jednoho seznamu bez možnosti hledat. */}
+          <BlogHledani
+            clanky={posts.map((p) => ({
+              slug: p.slug,
+              title: p.title,
+              date: p.date,
+              datum: formatDate(p.date),
+              excerpt: p.excerpt,
+              tema: p.tema,
+            }))}
+            temata={TEMATA.map((t) => ({ slug: t.slug, nazev: t.nazev }))}
+          />
         </div>
       </main>
       <Footer />
