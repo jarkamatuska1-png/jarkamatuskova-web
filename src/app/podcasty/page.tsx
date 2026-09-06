@@ -41,7 +41,7 @@ export default function PodcastyPage() {
               Inspirace do uší — o vědomém životě, metodě JIH®, energii a osobním rozvoji. Poslechni si mě cestou, při vaření nebo kdekoliv jinde.
             </p>
             <a
-              href="https://anchor.fm/matuskova"
+              href="https://open.spotify.com/show/08PSAlQKwqOvuybLWyd82f"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block px-10 py-4 bg-[var(--gold)] text-[var(--foreground)] text-xs tracking-[0.25em] uppercase font-medium hover:bg-[var(--gold-dark)] transition-colors duration-300"
@@ -75,20 +75,28 @@ export default function PodcastyPage() {
           <div className="max-w-3xl mx-auto px-6 text-center">
             <p className="text-xs tracking-[0.4em] uppercase text-[var(--gold)] mb-5">Poslouchej</p>
             <h2 className="font-heading text-4xl md:text-5xl font-semibold text-[var(--foreground)] mb-8">
-              Dostupné na{" "}
-              <span className="text-[var(--gold)]">Spotify</span>
+              Dostupné na <span className="text-[var(--gold)]">Spotify</span>{" "}
+              i <span className="text-[var(--gold)]">Apple Podcasts</span>
             </h2>
             <p className="text-[var(--muted)] font-light leading-relaxed mb-12 max-w-xl mx-auto">
-              Všechny epizody najdeš na Anchor.fm — nebo vyhledej „Jarka Matušková" přímo ve své oblíbené podcast aplikaci.
+              Podcast se jmenuje <strong className="font-medium text-[var(--foreground)]">Vědomý život s Jarkou Matuškovou</strong> — najdeš ho pod tímto názvem i ve své oblíbené podcast aplikaci.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://anchor.fm/matuskova"
+                href="https://open.spotify.com/show/08PSAlQKwqOvuybLWyd82f"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block px-10 py-4 bg-[var(--gold)] text-[var(--foreground)] text-xs tracking-[0.25em] uppercase font-medium hover:bg-[var(--gold-dark)] transition-colors duration-300"
               >
-                Anchor.fm / Spotify →
+                Spotify →
+              </a>
+              <a
+                href="https://podcasts.apple.com/cz/podcast/v%C4%9Bdom%C3%BD-%C5%BEivot-s-jarkou-matu%C5%A1kovou/id1500901566"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block px-10 py-4 border border-[var(--cream-dark)] text-[var(--foreground)] text-xs tracking-[0.25em] uppercase font-medium hover:border-white hover:bg-white/10 transition-all duration-300"
+              >
+                Apple Podcasts →
               </a>
               <Link
                 href="/blog"
