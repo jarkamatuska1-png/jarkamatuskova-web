@@ -37,7 +37,8 @@ export default function OsobniVedeni() {
           <p>
             Nebudu ti tvrdit, že to bude lehké. Přestat držet všechno silou,
             vrátit se k sobě, žít z pravdy místo ze sevření — to chce odvahu a
-            čas. Proto šest měsíců, ne víkend. A proto jen pár žen najednou — víc
+            čas. Proto šest měsíců, ne víkend — a dvacet tisíc měsíčně. A proto jen
+            pár žen najednou — víc
             jich vézt doopravdy neumím a nechci předstírat, že jo.
           </p>
         </div>
