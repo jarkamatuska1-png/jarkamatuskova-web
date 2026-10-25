@@ -1,6 +1,10 @@
 // Oddíly Popelka · Královna · Pět oříšků a pět etap cesty „Z popelky na královnu“.
 // Text schválila Jarka 25. 10. 2026 (jih-core/z-popelky/web-uvod-HLAVNI.txt).
 // Barvy etap jen jako akcent (jih-core/z-popelky-na-kralovnu.md, Vizuál).
+// Termíny a čekací listina: plán vln potvrdila Jarka 25. 10. 2026 (dveře Narovnání 4× ročně na 7 dní,
+// skupina Přehledu 4× ročně, max. 12 žen).
+
+import CekaciListina from "./CekaciListina";
 
 type Etapa = {
   cislo: number;
@@ -8,7 +12,9 @@ type Etapa = {
   heslo?: string;
   text: string;
   barva: string;
+  kdy?: string;
   odkaz?: { href: string; label: string };
+  cekaci?: { etapa: "narovnani" | "prehled" | "tvoreni"; tlacitko: string; nazev: string };
 };
 
 const etapy: Etapa[] = [
@@ -25,18 +31,24 @@ const etapy: Etapa[] = [
     nazev: "Narovnání",
     text: "Přestaneš se hledat v minulosti a postavíš se na vlastní nohy.",
     barva: "#C98B6B",
+    kdy: "Dveře otevírám 4× do roka na 7 dní. Nejbližší začátkem prosince 2026.",
+    cekaci: { etapa: "narovnani", tlacitko: "Chci vědět první", nazev: "Narovnání" },
   },
   {
     cislo: 3,
     nazev: "Přehled",
     text: "S malou skupinou žen projdeš deset vztahů svého života. K sobě, k hojnosti, k rodině, k partnerovi, k práci, ke zdraví, k penězům, k učení a ke světu.",
     barva: "#9AAA8C",
+    kdy: "Nová skupina 4× do roka, nejbližší v lednu 2027. Nejvýš 12 žen.",
+    cekaci: { etapa: "prehled", tlacitko: "Rezervuj si místo", nazev: "Přehled" },
   },
   {
     cislo: 4,
     nazev: "Tvoření",
     text: "Přestaneš jen reagovat a začneš svůj život vědomě tvořit.",
     barva: "#3F7A7A",
+    kdy: "Otevřu v roce 2027.",
+    cekaci: { etapa: "tvoreni", tlacitko: "Chci vědět první", nazev: "Tvoření" },
   },
   {
     cislo: 5,
@@ -147,16 +159,19 @@ export default function ZPopelkyCesta() {
                 <p className="font-heading italic text-lg text-[var(--gold-dark)] mb-2">{e.heslo}</p>
               )}
               <p className="text-[var(--muted)]">{e.text}</p>
-              {e.odkaz ? (
+              {e.kdy && (
+                <p className="mt-4 text-[14px] text-[var(--foreground)] font-normal">{e.kdy}</p>
+              )}
+              {e.cekaci ? (
+                <CekaciListina etapa={e.cekaci.etapa} tlacitko={e.cekaci.tlacitko} nazev={e.cekaci.nazev} />
+              ) : e.odkaz ? (
                 <a
                   href={e.odkaz.href}
                   className="inline-block mt-5 text-[10px] tracking-[0.3em] uppercase font-medium text-[var(--gold)] hover:text-[var(--gold-dark)] border-b border-[var(--gold-light)] pb-1"
                 >
                   {e.odkaz.label} →
                 </a>
-              ) : (
-                <p className="mt-5 text-[10px] tracking-[0.3em] uppercase text-[var(--muted)]">Připravuji</p>
-              )}
+              ) : null}
             </li>
           ))}
         </ol>
