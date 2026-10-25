@@ -9,6 +9,7 @@
   --cream: #FAF8F5;
   --cream-dark: #EDE8E0;
   --muted: #7A7A7A;
+  --navy: #1F2A44;
 }
 
 @theme inline {
@@ -20,6 +21,7 @@
   --color-cream: var(--cream);
   --color-cream-dark: var(--cream-dark);
   --color-muted: var(--muted);
+  --color-navy: var(--navy);
   --font-sans: var(--font-dm-sans);
   --font-heading: var(--font-syne);
 }
