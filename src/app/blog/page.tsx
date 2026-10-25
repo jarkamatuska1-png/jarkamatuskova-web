@@ -17,13 +17,13 @@ export const metadata: Metadata = {
     siteName: "Jarka Matušková",
     locale: "cs_CZ",
     type: "website",
-    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Blog | Jarka Matušková" }],
+    images: [{ url: "/opengraph-image.jpg", width: 1200, height: 630, alt: "Blog | Jarka Matušková" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Blog | Jarka Matušková",
     description: "Inspirace, články a myšlenky o vědomém životě a metodě JIH®.",
-    images: ["/opengraph-image"],
+    images: ["/opengraph-image.jpg"],
   },
 };
 

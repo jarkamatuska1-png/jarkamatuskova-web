@@ -34,7 +34,7 @@ export async function generateMetadata({
       type: "website",
       images: [
         {
-          url: tema.ogImage ?? "/opengraph-image",
+          url: tema.ogImage ?? "/opengraph-image.jpg",
           width: 1200,
           height: tema.ogImage ? 628 : 630,
           alt: titulek,
@@ -45,7 +45,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: titulek,
       description: tema.popis,
-      images: [tema.ogImage ?? "/opengraph-image"],
+      images: [tema.ogImage ?? "/opengraph-image.jpg"],
     },
   };
 }
