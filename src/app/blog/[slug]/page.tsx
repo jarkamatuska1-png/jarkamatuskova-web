@@ -65,7 +65,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const metadataTitle = post.seoTitle ?? post.title;
   const metadataDescription = post.metaDescription ?? post.excerpt;
   // Vlastní náhled → náhled tématu → sdílený náhled webu.
-  const metadataImage = post.ogImage ?? ogImageTematu(post.tema) ?? "/opengraph-image";
+  const metadataImage = post.ogImage ?? ogImageTematu(post.tema) ?? "/opengraph-image.jpg";
   const jeVlastni = Boolean(post.ogImage ?? ogImageTematu(post.tema));
   return {
     title: `${metadataTitle} | Jarka Matušková`,

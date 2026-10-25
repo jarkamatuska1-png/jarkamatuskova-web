@@ -21,36 +21,30 @@ const playfair = Playfair_Display({
   style: ["normal", "italic"],
 });
 
+const TITULEK = "Z popelky na královnu | Jarka Matušková, metoda JIH®";
+const POPIS =
+  "Cesta z popelky na královnu s Jarkou Matuškovou, autorkou terapeutické metody JIH®. Pět kroků od probuzení k vedení vlastního života. Začni knížkou Věty, které nás řídí.";
+
 export const metadata: Metadata = {
-  title: "Jarka Matušková | Autorka metody JIH®",
-  description:
-    "Autorka metody JIH®. Provázím ženy na půlroční cestě osobního vedení — kus cesty vedle tebe, k tomu, kolik života v tobě ještě čeká.",
-  keywords: ["metoda JIH", "osobní vedení", "Jarka Matušková"],
+  title: TITULEK,
+  description: POPIS,
   metadataBase: new URL("https://www.jarkamatuskova.cz"),
   other: {
     "facebook-domain-verification": "lh02ci5zn1uqauv45qzkv01jfhurhs",
   },
+  // Obrázek pro sdílení = src/app/opengraph-image.jpg (Next ho přidá sám).
   openGraph: {
-    title: "Jarka Matušková | Autorka metody JIH®",
-    description: "Kus cesty vedle tebe. Doopravdy.",
+    title: TITULEK,
+    description: "Ne proto, abys byla vidět. Ale proto, abys viděla.",
     url: "https://www.jarkamatuskova.cz",
     siteName: "Jarka Matušková",
     locale: "cs_CZ",
     type: "website",
-    images: [
-      {
-        url: "/opengraph-image",
-        width: 1200,
-        height: 630,
-        alt: "Jarka Matušková | Autorka metody JIH®",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Jarka Matušková | Autorka metody JIH®",
-    description: "Kus cesty vedle tebe. Doopravdy.",
-    images: ["/opengraph-image"],
+    title: TITULEK,
+    description: "Ne proto, abys byla vidět. Ale proto, abys viděla.",
   },
 };
 

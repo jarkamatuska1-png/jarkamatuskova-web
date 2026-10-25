@@ -11,6 +11,11 @@ import Blog from "@/components/Blog";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
+import type { Metadata } from "next";
+
+// Kanonická adresa jen pro úvod (v layoutu by se zdědila na všechny podstránky).
+export const metadata: Metadata = { alternates: { canonical: "/" } };
+
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
@@ -18,17 +23,10 @@ const jsonLd = {
   url: "https://www.jarkamatuskova.cz",
   image: "https://www.jarkamatuskova.cz/images/jarka-foto.png",
   description:
-    "Autorka metody JIH®. Provázím ženy na půlroční cestě osobního vedení — kus cesty vedle nich, k tomu, kolik života v nich ještě čeká.",
-  jobTitle: "Autorka metody JIH®",
+    "Autorka terapeutické metody JIH®. Provází ženy cestou z popelky na královnu: od probuzení k vedení vlastního života.",
+  jobTitle: "Autorka terapeutické metody JIH®",
   telephone: "+420774420251",
   email: "matuskova@freli.cz",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "Jimlín 230",
-    addressLocality: "Jimlín",
-    postalCode: "440 01",
-    addressCountry: "CZ",
-  },
   sameAs: [
     "https://www.facebook.com/jarka.matuskova",
     "https://www.instagram.com/j_matuskova/",
