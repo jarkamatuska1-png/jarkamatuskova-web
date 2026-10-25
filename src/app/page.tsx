@@ -1,12 +1,13 @@
 import Nav from "@/components/Nav";
-import Hero from "@/components/Hero";
+import ZPopelkyUvod from "@/components/ZPopelkyUvod";
+import ZPopelkyCesta from "@/components/ZPopelkyCesta";
+import ZPopelkyZaver from "@/components/ZPopelkyZaver";
 import About from "@/components/About";
 import Method from "@/components/Method";
 import HelenaBridge from "@/components/HelenaBridge";
 import OsobniVedeni from "@/components/OsobniVedeni";
 import Testimonials from "@/components/Testimonials";
 import Blog from "@/components/Blog";
-import Closing from "@/components/Closing";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
@@ -45,14 +46,15 @@ export default function Home() {
       />
       <Nav />
       <main>
-        <Hero />
+        <ZPopelkyUvod />
+        <ZPopelkyCesta />
         <About />
         <Method />
         <HelenaBridge />
         <OsobniVedeni />
         <Testimonials />
         <Blog />
-        <Closing />
+        <ZPopelkyZaver />
         <Contact />
       </main>
       <Footer />
