@@ -37,6 +37,9 @@ export async function POST(req: NextRequest) {
         // Potvrzovací e-mail s odkazem do Zoomu posílá automatizace v Ecomailu.
         trigger_autoresponders: true,
         update_existing: true,
+        // Bez tohohle Ecomail nechá dřív odhlášenou adresu odhlášenou: stránka ukáže
+        // „Máš to“, ale potvrzení nepřijde. Vyplněný formulář = výslovný souhlas.
+        resubscribe: true,
       }),
     },
   );
