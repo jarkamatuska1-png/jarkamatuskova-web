@@ -67,6 +67,15 @@ export default function Method() {
           >
             Poznat osobní vedení
           </Link>
+          <p className="text-[var(--muted)] text-sm font-light mt-8">
+            Chceš jít cestou JIH® s někým blízko tebe?{" "}
+            <a
+              href="https://www.metodajih.cz/najit-specialistu"
+              className="text-[var(--gold)] underline underline-offset-4 hover:text-[var(--foreground)] transition-colors"
+            >
+              Najdi si specialistku metody JIH® ve svém okolí
+            </a>
+          </p>
           <p className="text-[var(--muted)] text-xs font-light max-w-xl mx-auto mt-10 leading-relaxed">
             Interní certifikace JIH® není zdravotní služba ani státní odborná
             kvalifikace.

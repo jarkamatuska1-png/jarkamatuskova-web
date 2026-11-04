@@ -45,6 +45,10 @@ export default function Footer() {
             <Link href="/podcasty" className="hover:text-[var(--gold)] transition-colors">
               Podcasty
             </Link>
+            <span className="text-[var(--gold-light)]">·</span>
+            <a href="https://www.metodajih.cz/najit-specialistu" className="hover:text-[var(--gold)] transition-colors">
+              Specialistky metody JIH®
+            </a>
           </div>
         </div>
       </div>
