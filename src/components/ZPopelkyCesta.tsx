@@ -31,7 +31,7 @@ const etapy: Etapa[] = [
     nazev: "Narovnání",
     text: "Přestaneš se hledat v minulosti a postavíš se na vlastní nohy.",
     barva: "#C98B6B",
-    kdy: "Dveře otevírám 4× do roka na 7 dní. Nejbližší začátkem prosince 2026.",
+    kdy: "Dveře otevírám 4× do roka na 7 dní. Nejbližší 20. ledna 2027.",
     cekaci: { etapa: "narovnani", tlacitko: "Chci vědět první", nazev: "Narovnání" },
   },
   {
