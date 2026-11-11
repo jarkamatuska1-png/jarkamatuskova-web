@@ -4,7 +4,8 @@ import ZPopelkyCesta from "@/components/ZPopelkyCesta";
 import ZPopelkyZaver from "@/components/ZPopelkyZaver";
 import About from "@/components/About";
 import Method from "@/components/Method";
-import HelenaBridge from "@/components/HelenaBridge";
+import JakZacit from "@/components/JakZacit";
+import YouTubeKomunita from "@/components/YouTubeKomunita";
 import OsobniVedeni from "@/components/OsobniVedeni";
 import Testimonials from "@/components/Testimonials";
 import Blog from "@/components/Blog";
@@ -45,10 +46,11 @@ export default function Home() {
       <Nav />
       <main>
         <ZPopelkyUvod />
-        <ZPopelkyCesta />
         <About />
         <Method />
-        <HelenaBridge />
+        <ZPopelkyCesta />
+        <JakZacit />
+        <YouTubeKomunita />
         <OsobniVedeni />
         <Testimonials />
         <Blog />
