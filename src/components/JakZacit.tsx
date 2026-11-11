@@ -27,14 +27,14 @@ const setkani: Setkani[] = [
   {
     id: "sezeni",
     nazev: "Sezení metodou JIH®",
-    delka: "60 minut · online",
+    delka: "60 minut · online · 3 000 Kč",
     text: "Hodina jen pro tebe. Podíváme se na to, co tě drží, a najdeme, kudy dál.",
     calendly: "https://calendly.com/jarkamatuska1/sezeni-metodou-jih",
   },
   {
     id: "konzultace",
     nazev: "Konzultace",
-    delka: "30 minut · online",
+    delka: "30 minut · online · 2 000 Kč",
     text: "Půlhodina na to, co máš zrovna na stole.",
     calendly: "https://calendly.com/jarkamatuska1/konzultace",
   },
