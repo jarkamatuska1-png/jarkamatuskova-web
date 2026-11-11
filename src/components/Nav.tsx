@@ -4,9 +4,9 @@ import { useState, useEffect } from "react";
 
 const links = [
   { href: "/#cesta", label: "Cesta" },
+  { href: "/#jak-zacit", label: "Jak začít" },
   { href: "/#o-mne", label: "O mně" },
-  { href: "/#metoda-jih", label: "Metoda JIH®" },
-  { href: "/#osobni-vedeni", label: "Osobní vedení" },
+  { href: "/#youtube", label: "YouTube" },
   { href: "/blog", label: "Blog" },
   { href: "/#kontakt", label: "Kontakt" },
 ];
