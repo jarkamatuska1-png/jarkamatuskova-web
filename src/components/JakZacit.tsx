@@ -2,7 +2,7 @@
 
 // Sekce „Jak spolu můžeme začít“ — přehled všech cest k Jarce na jednom místě.
 // Zadala Jarka 11. 11. 2026: rozšířit nabídku, aby bylo jasné, že se dá přihlásit
-// na terapii / konzultaci a přidat se do komunity na YouTube. Vše kolem cesty
+// na sezení / konzultaci a přidat se do komunity na YouTube. Vše kolem cesty
 // „Z popelky na královnu“. Typy setkání a jejich popisy = Jarčin Calendly.
 
 import { useState } from "react";
@@ -25,8 +25,8 @@ const setkani: Setkani[] = [
     calendly: "https://calendly.com/jarkamatuska1/uvodni-hovor",
   },
   {
-    id: "terapie",
-    nazev: "Terapie metodou JIH®",
+    id: "sezeni",
+    nazev: "Sezení metodou JIH®",
     delka: "60 minut · online",
     text: "Hodina jen pro tebe. Podíváme se na to, co tě drží, a najdeme, kudy dál.",
     calendly: "https://calendly.com/jarkamatuska1/terapie-metodou-jih",

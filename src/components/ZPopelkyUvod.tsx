@@ -31,7 +31,7 @@ export default function ZPopelkyUvod() {
 
           {/* Kdo jsem a co dělám jednou větou (Jarka 11. 11. 2026: zvednout povědomí). */}
           <p className="text-[15px] md:text-[16px] text-[var(--muted)] font-light leading-relaxed mb-12">
-            Jsem Jarka, autorka terapeutické metody JIH®. Provázím ženy cestou z popelky na královnu,
+            Jsem Jarka, autorka metody JIH®. Provázím ženy cestou z popelky na královnu,
             zpátky k sobě a k vlastnímu životu.
           </p>
 
