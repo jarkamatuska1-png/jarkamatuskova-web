@@ -103,7 +103,7 @@ export default function JakZacit() {
         {aktivni && (
           <div id="jak-zacit-kalendar" className="mt-8 border border-[var(--cream-dark)]">
             <p className="px-6 pt-6 text-[var(--muted)] font-light text-[15px]">
-              {aktivni.nazev}: vyber si den a čas, který ti sedí.
+              {aktivni.nazev}: vyber si čas, který ti sedí.
             </p>
             <CalendlyEmbed key={aktivni.id} url={`${aktivni.calendly}?hide_gdpr_banner=1&primary_color=c9a96e`} />
           </div>
