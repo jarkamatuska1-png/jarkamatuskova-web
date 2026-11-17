@@ -4,12 +4,12 @@ import Link from "next/link";
 
 export const metadata = {
   title: "Podcasty | Jarka Matušková",
-  description: "Poslouchej podcasty Jarky Matuškové o vědomém životě, metodě JIH® a osobním rozvoji. Dostupné na Spotify a Apple Podcasts.",
-  keywords: ["podcast", "Jarka Matušková", "vědomý život", "metoda JIH", "osobní rozvoj", "Spotify", "inspirace"],
+  description: "Podcast Z popelky na královnu s Jarkou Matuškovou. Každou středu jedna věta, která nás řídí. Na Spotify, Apple Podcasts i YouTube.",
+  keywords: ["podcast", "Z popelky na královnu", "Jarka Matušková", "metoda JIH", "osobní rozvoj", "Spotify", "inspirace"],
   alternates: { canonical: "https://www.jarkamatuskova.cz/podcasty" },
   openGraph: {
     title: "Podcasty | Jarka Matušková",
-    description: "Inspirace do uší — o vědomém životě, metodě JIH® a osobním rozvoji.",
+    description: "Z popelky na královnu. Každou středu jedna věta, která nás řídí.",
     url: "https://www.jarkamatuskova.cz/podcasty",
     siteName: "Jarka Matušková",
     locale: "cs_CZ",
@@ -19,7 +19,7 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Podcasty | Jarka Matušková",
-    description: "Inspirace do uší — vědomý život, metoda JIH® a osobní rozvoj.",
+    description: "Z popelky na královnu. Každou středu jedna věta, která nás řídí.",
     images: ["/opengraph-image.jpg"],
   },
 };
@@ -33,12 +33,12 @@ export default function PodcastyPage() {
         {/* Hero */}
         <section className="pt-40 pb-28 bg-[var(--cream)]">
           <div className="max-w-4xl mx-auto px-6 text-center">
-            <p className="text-xs tracking-[0.4em] uppercase text-[var(--gold)] mb-5">Audio</p>
+            <p className="text-xs tracking-[0.4em] uppercase text-[var(--gold)] mb-5">Podcast</p>
             <h1 className="font-heading text-5xl md:text-6xl lg:text-7xl font-semibold text-[var(--foreground)] leading-tight mb-8">
-              Pod<span className="text-[var(--gold)]">casty</span>
+              Z popelky <span className="text-[var(--gold)]">na královnu</span>
             </h1>
             <p className="text-xl text-[var(--muted)] font-light leading-relaxed max-w-2xl mx-auto mb-12">
-              Inspirace do uší — o vědomém životě, metodě JIH®, energii a osobním rozvoji. Poslechni si mě cestou, při vaření nebo kdekoliv jinde.
+              Každou středu jedna věta, která nás řídí. „Hlavně ať nejsi nikomu na obtíž.“ „Už je pozdě.“ Podíváme se, odkud se vzala a co s tebou dělá dneska. Poslechni si mě cestou, při vaření nebo kdekoliv jinde.
             </p>
             <a
               href="https://open.spotify.com/show/08PSAlQKwqOvuybLWyd82f"
@@ -56,7 +56,7 @@ export default function PodcastyPage() {
           <div className="max-w-3xl mx-auto px-6">
             <div className="grid md:grid-cols-3 gap-12 text-center">
               {[
-                { title: "Vědomý život", desc: "Jak žít přítomně, s energií a v souladu se sebou." },
+                { title: "Věty, které nás řídí", desc: "Doma, ve vztahu, v práci, s penězi, se zdravím. A co se stane, když je konečně uvidíš." },
                 { title: "Metoda JIH®", desc: "Vysvětlení principů a praktické ukázky práce s emocemi." },
                 { title: "Osobní rozvoj", desc: "Příběhy, myšlenky a inspirace pro každý den." },
               ].map((item, i) => (
@@ -79,7 +79,7 @@ export default function PodcastyPage() {
               i <span className="text-[var(--gold)]">Apple Podcasts</span>
             </h2>
             <p className="text-[var(--muted)] font-light leading-relaxed mb-12 max-w-xl mx-auto">
-              Podcast se jmenuje <strong className="font-medium text-[var(--foreground)]">Vědomý život s Jarkou Matuškovou</strong> — najdeš ho pod tímto názvem i ve své oblíbené podcast aplikaci.
+              Podcast se jmenuje <strong className="font-medium text-[var(--foreground)]">Z popelky na královnu</strong> — najdeš ho pod tímto názvem i ve své oblíbené podcast aplikaci. Nový díl každou středu, na YouTube i s obrazem.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
@@ -91,7 +91,7 @@ export default function PodcastyPage() {
                 Spotify →
               </a>
               <a
-                href="https://podcasts.apple.com/cz/podcast/v%C4%9Bdom%C3%BD-%C5%BEivot-s-jarkou-matu%C5%A1kovou/id1500901566"
+                href="https://podcasts.apple.com/cz/podcast/id1500901566"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block px-10 py-4 border border-[var(--cream-dark)] text-[var(--foreground)] text-xs tracking-[0.25em] uppercase font-medium hover:border-white hover:bg-white/10 transition-all duration-300"
