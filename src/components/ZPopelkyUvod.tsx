@@ -24,9 +24,15 @@ export default function ZPopelkyUvod() {
             <span className="text-[var(--gold)] font-medium">na královnu</span>
           </h1>
 
-          <p className="font-heading italic text-xl md:text-2xl text-[var(--foreground)] leading-snug mb-12">
+          <p className="font-heading italic text-xl md:text-2xl text-[var(--foreground)] leading-snug mb-8">
             Ne proto, abys byla vidět.<br />
             Ale proto, abys viděla.
+          </p>
+
+          {/* Kdo jsem a co dělám jednou větou (Jarka 11. 11. 2026: zvednout povědomí). */}
+          <p className="text-[15px] md:text-[16px] text-[var(--muted)] font-light leading-relaxed mb-12">
+            Jsem Jarka, autorka terapeutické metody JIH®. Provázím ženy cestou z popelky na královnu,
+            zpátky k sobě a k vlastnímu životu.
           </p>
 
           <div className="flex flex-col items-start gap-3">
@@ -37,6 +43,12 @@ export default function ZPopelkyUvod() {
               Začni knížkou Věty, které nás řídí
             </a>
             <p className="text-[13px] text-[var(--muted)] font-light">Je to dárek pro tebe.</p>
+            <a
+              href="#jak-zacit"
+              className="mt-3 text-[10px] tracking-[0.3em] uppercase font-medium text-[var(--gold)] hover:text-[var(--gold-dark)] border-b border-[var(--gold-light)] pb-1"
+            >
+              Nebo si domluv hovor se mnou →
+            </a>
           </div>
 
         </div>
