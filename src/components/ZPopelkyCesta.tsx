@@ -37,7 +37,7 @@ const etapy: Etapa[] = [
   {
     cislo: 3,
     nazev: "Přehled",
-    text: "S malou skupinou žen projdeš deset vztahů svého života. K sobě, k hojnosti, k rodině, k partnerovi, k práci, ke zdraví, k penězům, k učení a ke světu.",
+    text: "S malou skupinou žen projdeš deset vztahů svého života. K sobě, k hojnosti, k rodině, k partnerovi, ke vztahům, k práci, ke zdraví, k penězům, k učení a ke světu.",
     barva: "#9AAA8C",
     kdy: "Nová skupina 4× do roka, nejbližší v lednu 2027. Nejvýš 12 žen.",
     cekaci: { etapa: "prehled", tlacitko: "Rezervuj si místo", nazev: "Přehled" },
