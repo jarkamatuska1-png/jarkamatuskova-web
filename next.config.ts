@@ -43,6 +43,10 @@ const securityHeaders = [
 ];
 
 const nextConfig: NextConfig = {
+  images: {
+    // Náhledy videí z YouTube v sekci Komunita na YouTube (jen obrázky, žádný přehrávač).
+    remotePatterns: [new URL("https://i.ytimg.com/vi/**")],
+  },
   async headers() {
     return [
       {
